@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GoodTek - The Ultimate AI for Solana Blockchain</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        body {
+            background: #0a0a23;
+            color: #fff;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Preloader */
+        #preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #0a0a23;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        .preloader-text {
+            font-size: 2rem;
+            color: #00d4ff;
+        }
+
+        /* Header */
+        header {
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            color: #ffffff;
+            text-shadow: 0 0 10px #ffffff;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            margin-top: 10px;
+            color: #ccc;
+        }
+
+        /* Main Content */
+        main {
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .token-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 30px;
+            max-width: 600px;
+            margin: 0 auto;
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+        }
+
+        .token-card h2 {
+            font-size: 2rem;
+            color: #ffffff;
+            margin-bottom: 20px;
+        }
+
+        .token-card p {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            color: #ddd;
+        }
+
+        .telegram-links {
+            margin-top: 40px;
+        }
+
+        .telegram-links a {
+            display: inline-block;
+            margin: 0 15px;
+            padding: 10px 20px;
+            background: #fafafa;
+            color: #0a0a23;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: transform 0.3s;
+        }
+
+        .telegram-links a:hover {
+            transform: scale(1.1);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 30px 20px;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .stagger-grid {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .stagger-dot {
+            width: 15px;
+            height: 15px;
+            background: #ffffff;
+            border-radius: 50%;
+        }
+
+        /* AI Bubbles */
+        .ai-bubble {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background: rgba(0, 212, 255, 0.5);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        /* Mouse Follower */
+        #mouse-follower {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background: url('gudtek.jpg') no-repeat center;
+            background-size: contain;
+            pointer-events: none;
+            z-index: 1000;
+        }
+        #t3{
+            margin-top: 80%;
+            margin-bottom: 80%;
+            position:absoulte;
+        }
+        #c1{
+            margin-bottom: 30%;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+</head>
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="preloader-text">GudTek</div>
+    </div>
+
+    <!-- Mouse Follower -->
+    <div id="mouse-follower"></div>
+
+    <!-- Header -->
+    <header>
+        <h1>GudTek</h1>
+        <p>The Ultimate AI for Solana Blockchain Analysis</p>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <div class="token-card c1">
+            <h2>Token Launch</h2>
+            <p><strong>Contract Address (CA):</strong> SOON</p>
+            <p><strong>Utility:</strong> GoodTek is the best agent for scanning and gathering information about tokens on the Solana blockchain, providing real-time insights and analytics.</p>
+            <p><strong>Roadmap</strong> Build tonn of technologies to people so they can trade easily </p>
+            <p><strong>June</strong> Publish the gudtek talking bot </p>
+            <p><strong>July</strong> Update the new bot for more scan features</p>
+        </div>
+        
+
+
+
+        <div class="telegram-links">
+            <a href="https://t.me/GoodTekBot" target="_blank">Join GoodTek Bot</a>
+            <a href="https://t.me/GoodTekChannel" target="_blank">Join Our Channel</a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>Powered by GoodTek &copy; 2025</p>
+        <div class="stagger-grid">
+            <div class="stagger-dot"></div>
+            <div class="stagger-dot"></div>
+            <div class="stagger-dot"></div>
+            <div class="stagger-dot"></div>
+            <div class="stagger-dot"></div>
+        </div>
+    </footer>
+
+    <script>
+        // Preloader Animation with Value Staggering
+        const preloaderText = document.querySelector('.preloader-text');
+        anime({
+            targets: preloaderText,
+            opacity: [0, 1],
+            scale: [0.5, 1],
+            duration: 1500,
+            easing: 'easeInOutQuad',
+            complete: () => {
+                setTimeout(() => {
+                    anime({
+                        targets: '#preloader',
+                        opacity: 0,
+                        duration: 1000,
+                        easing: 'easeOutQuad',
+                        complete: () => {
+                            document.getElementById('preloader').style.display = 'none';
+                        }
+                    });
+                }, 1000);
+            }
+        });
+
+        // AI Bubbles Animation (Moving and Colliding)
+        const numBubbles = 20;
+        for (let i = 0; i < numBubbles; i++) {
+            const bubble = document.createElement('div');
+            bubble.classList.add('ai-bubble');
+            document.body.appendChild(bubble);
+
+            const randomX = Math.random() * window.innerWidth;
+            const randomY = Math.random() * window.innerHeight;
+
+            bubble.style.left = `${randomX}px`;
+            bubble.style.top = `${randomY}px`;
+
+            anime({
+                targets: bubble,
+                translateX: () => anime.random(-200, 200),
+                translateY: () => anime.random(-200, 200),
+                scale: [0.5, 1.5],
+                duration: anime.random(2000, 5000),
+                easing: 'easeInOutQuad',
+                direction: 'alternate',
+                loop: true
+            });
+        }
+
+        // Mouse Follower Animation
+        const mouseFollower = document.getElementById('mouse-follower');
+        document.addEventListener('mousemove', (e) => {
+            anime({
+                targets: mouseFollower,
+                left: e.clientX - 25,
+                top: e.clientY - 25,
+                duration: 500,
+                easing: 'easeOutQuad'
+            });
+        });
+
+        // Footer Staggering Animation
+        anime({
+            targets: '.stagger-dot',
+            scale: [0, 1],
+            opacity: [0, 1],
+            delay: anime.stagger(200),
+            duration: 1000,
+            easing: 'easeInOutQuad',
+            loop: true,
+            direction: 'alternate'
+        });
+    </script>
+</body>
+</html>

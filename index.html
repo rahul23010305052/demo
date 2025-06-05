@@ -1,726 +1,407 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GudTek - AI-Powered Trading Bot on Solana</title>
-    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Alumni+Sans+SC:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Alumni+Sans+SC:ital@0;1&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.1.0/anime.js" integrity="sha512-mOOtKYXF2aQOBYpDmVxzVdIfPJTH/apAcaf3KpXLLoOel7LZxax1c5AqCr7Tj/IHejhuFX9hbMVLqYQEJcU8Gg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.1.0/anime.min.js" integrity="sha512-PtERWMgvZ4H5VEu6gEcSap5qoi/OQksnTw+B4/0wyPrCe7Lbz1tl3piTtuNcOCV5OEXFFePqVTJW3h9Aacj2sA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Roboto', sans-serif;
-            color: #ffffff;
-            background: #1a1a1a;
-            overflow-x: hidden;
-            position: relative;
-        }
-        body {
-  position: absolute;
-  
-  width: 100%;
-  height: 100%;
-}
-#creature-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  top: 0;
-  left: 0;
-  overflow: hidden;
-  width: 100%;
-  height: 100%;
-}
-#creature {
-  font-size: .2vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 150em;
-  height: 150em;
-  flex-wrap: wrap;
-}
-#creature div {
-  transform-style: preserve-3d;
-  position: relative;
-  width: 4em;
-  height: 4em;
-  margin: 3em;
-  border-radius: 2em;
-  will-change: transform;
-  mix-blend-mode: plus-lighter;
-  /*mix-blend-mode: screen;*/
-  /*mix-blend-mode: lighten;*/
-  background: var(--red);
-}
-
-        /* Background Box Pattern */
-        
-        .bg-pattern {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            background: linear-gradient(
-                45deg,
-                rgba(255, 255, 255, 0.05) 25%,
-                transparent 25%,
-                transparent 50%,
-                rgba(255, 255, 255, 0.05) 50%,
-                rgba(255, 255, 255, 0.05) 75%,
-                transparent 75%,
-                transparent
-            );
-            background-size: 50px 50px;
-            opacity: 0.2;
-        }
-
-        /* Navbar */
-        .navbar {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-            background: #000000;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            border-bottom: 2px solid #ffd700;
-        }
-
-        .navbar a {
-            color: #ffd700;
-            text-decoration: none;
-            margin: 0 15px;
-            font-size: 16px;
-            padding: 8px 16px;
-            border: 2px solid #ffd700;
-            border-radius: 25px;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .navbar a:hover {
-            background: #ffd700;
-            color: #000000;
-            box-shadow: 0 0 15px rgba(255, 215, 0, 0.7);
-            transform: scale(1.1);
-        }
-
-        .navbar .logo {
-            font-family: 'Luckiest Guy', cursive;
-            font-size: 24px;
-            color: #ffd700;
-            position: relative;
-        }
-
-        .navbar .logo canvas {
-            position: absolute;
-            top: -50px;
-            left: -50px;
-            z-index: -1;
-        }
-
-        /* Hero Section */
-        .hero {
-            text-align: center;
-            padding: 100px 20px;
-            background: linear-gradient(180deg, #000000, #1a1a1a);
-        }
-
-        .hero h1 {
-            font-family: 'Luckiest Guy', cursive;
-            font-size: 80px;
-            color: #ffd700;
-            margin-bottom: 20px;
-            text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
-        }
-
-        .hero h5 {
-            font-family: "Alumni Sans SC", sans-serif;
-            font-optical-sizing: auto;
-            font-weight: 400;
-        
-            font-size: 29px;
-            color: #ffffff;
-            max-width: 600px;
-            margin: 0 auto 30px;
-            line-height: 1.6;
-        }
-
-        .hero a {
-            display: inline-block;
-            padding: 15px 30px;
-            background: #ffd700;
-            color: #000000;
-            text-decoration: none;
-            border-radius: 25px;
-            font-weight: 700;
-            transition: all 0.3s ease;
-        }
-
-        .hero a:hover {
-            background: #ffffff;
-            box-shadow: 0 0 20px rgba(255, 215, 0, 0.7);
-            transform: translateY(-5px);
-        }
-
-        /* Token Launch Card */
-        .token-card {
-            max-width: 600px;
-            margin: 50px auto;
-            background: #000000;
-            border: 2px solid #ffd700;
-            border-radius: 15px;
-            padding: 30px;
-            box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
-            text-align: center;
-            transition: transform 0.3s ease;
-        }
-
-        .token-card:hover {
-            transform: scale(1.05);
-        }
-
-        .token-card h2 {
-            font-family: 'Luckiest Guy', cursive;
-            font-size: 36px;
-            color: #ffd700;
-            margin-bottom: 20px;
-        }
-
-        .token-card p {
-            font-family: "PT Sans", sans-serif;
-  font-weight: 700;
-  font-style: normal;
-
-
-            font-size: 18px;
-            color: #ffffff;
-            line-height: 1.6;
-            margin-bottom: 20px;
-        }
-
-        .token-card a {
-            display: inline-block;
-            padding: 10px 20px;
-            background: #ffd700;
-            color: #000000;
-            text-decoration: none;
-            border-radius: 25px;
-            font-weight: 700;
-            transition: all 0.3s ease;
-        }
-
-        .token-card a:hover {
-            background: #ffffff;
-            box-shadow: 0 0 15px rgba(215, 205, 146, 0.486);
-        }
-
-        /* About Section */
-        .about {
-            max-width: 800px;
-            margin: 50px auto;
-            padding: 0 20px;
-            text-align: center;
-        }
-
-        .about h2 {
-            font-family: 'Luckiest Guy', cursive;
-            font-size: 48px;
-            color: #ffd700;
-            margin-bottom: 20px;
-        }
-
-        .about p {
-            font-family: "PT Sans", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-            font-size: 18px;
-            color: #ffffff;
-            line-height: 1.8;
-            margin-bottom: 20px;
-        }
-
-        /* Roadmap Section */
-        .roadmap {
-            max-width: 800px;
-            margin: 50px auto;
-            padding: 0 20px;
-        }
-
-        .roadmap h2 {
-            font-family: 'Luckiest Guy', cursive;
-            font-size: 48px;
-            color: #ffd700;
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        .roadmap ul {
-            list-style: none;
-            position: relative;
-            padding-left: 40px;
-        }
-
-        .roadmap ul::before {
-            content: '';
-            position: absolute;
-            left: 20px;
-            top: 0;
-            bottom: 0;
-            width: 4px;
-            background: #ffd700;
-        }
-
-        .roadmap li {
-            margin-bottom: 40px;
-            position: relative;
-        }
-
-        .roadmap li::before {
-            content: '';
-            position: absolute;
-            left: -24px;
-            top: 5px;
-            width: 16px;
-            height: 16px;
-            background: #ffd700;
-            border-radius: 50%;
-            box-shadow: 0 0 10px rgba(255, 215, 0, 0.7);
-        }
-
-        .roadmap h3 {
-            font-size: 24px;
-            color: #ffffff;
-            margin-bottom: 10px;
-        }
-
-        .roadmap p {
-            font-size: 16px;
-            color: #cccccc;
-        }
-
-        /* White Paper Section */
-        .white-paper {
-            max-width: 800px;
-            margin: 50px auto;
-            padding: 0 20px;
-            text-align: center;
-        }
-
-        .white-paper h2 {
-            font-family: 'Luckiest Guy', cursive;
-            font-size: 48px;
-            color: #ffd700;
-            margin-bottom: 20px;
-        }
-
-        .white-paper p {
-            font-family: "PT Sans", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-            font-size: 18px;
-            color: #ffffff;
-            line-height: 1.8;
-            margin-bottom: 20px;
-        }
-
-        /* Footer */
-        .footer {
-            text-align: center;
-            padding: 20px;
-            background: #000000;
-            border-top: 2px solid #ffd700;
-        }
-
-        .footer a {
-            color: #ffd700;
-            text-decoration: none;
-            font-weight: 700;
-        }
-
-        .footer a:hover {
-            color: #ffffff;
-        }
-        .white-paper{
-           
-            padding: 2% 2%;
-            background: #0202024f;
-            color: #000000;
-            text-decoration: none;
-            border-radius: 25px;
-            font-weight: 700;
-            transition: all 0.3s ease;
-        }
-        .img-logo{
-            height: 20%;
-            width: 20%;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 60px;
-            }
-
-            .hero h5 {
-                font-size: 20px;
-            }
-
-            .navbar a {
-                margin: 0 10px;
-                font-size: 14px;
-                padding: 6px 12px;
-            }
-
-            .token-card {
-                margin: 20px;
-                padding: 20px;
-            }
-
-            .about h2, .roadmap h2, .white-paper h2 {
-                font-size: 36px;
-            }
-        }
-    </style>
-</head>
-<body>
-    <div id="creature-wrapper">
-        <div id="creature"></div>
-      </div>
-    <div class="bg-pattern"></div>
-
-    <!-- Navbar -->
-    <nav class="navbar">
-        
-        <a href="#hero">Home</a>
-        <a href="#about">About</a>
-        <a href="#roadmap">Roadmap</a>
-        <a href="#white-paper">White Paper</a>
-        <a href="https://t.me/@Gud_tek_bot">Try GudTek Bot</a>
-    </nav>
-
-    <!-- Hero Section -->
-    <section id="hero" class="hero">
-        <h1>GudTek</h1>
-        <h5>Revolutionary AI-powered trading bot on the Solana blockchain, designed to optimize your crypto trading with speed, precision, and intelligence.</h5>
-        <a href="https://t.me/@Gud_tek_bot">Try the GudTek Bot</a>
-        <a href="https://t.me/joincommunity">Join Our Community</a>
-    </section>
-
-    <!-- Token Launch Card -->
-    <section class="token-card">
-        <h2>Token Launch</h2>
-        <p>Contract Address: Coming Soon<br>GudTek Token (GUD) on Solana – Empowering decentralized AI trading with unparalleled efficiency and scalability.</p>
-        <a href="#">Learn More</a>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="about" >
-        <h2>About GudTek</h2>
-        <p style="text-align: left;">GudTek is a cutting-edge AI-driven trading bot built on the Solana blockchain, designed to revolutionize how you trade cryptocurrencies. Leveraging advanced machine learning and Solana’s high-speed, low-cost transactions, GudTek delivers real-time market analysis, automated trading strategies, and unparalleled efficiency. Whether you’re a seasoned trader or just starting, GudTek simplifies complex market dynamics, empowering you to make smarter decisions with confidence.</p>
-        <p style="text-align: left;">Our mission is to democratize access to advanced trading tools, combining AI innovation with the security and scalability of Solana. From predictive analytics to portfolio optimization, GudTek is your trusted partner in navigating the fast-paced world of crypto trading.</p>
-    </section>
-
-    <!-- Roadmap Section -->
-    <section id="roadmap" class="roadmap">
-        <h2>Roadmap</h2>
-        <ul>
-            <li>
-                <h3>Phase 1: Launch on Telegram</h3>
-                <p>Deploy the GudTek Bot on Telegram, enabling users to access AI-driven trading insights directly from their messaging app.</p>
-            </li>
-            <li>
-                <h3>Phase 2: Launch on Website</h3>
-                <p>Introduce a dedicated web platform for GudTek, offering advanced features and a user-friendly interface for seamless trading.</p>
-            </li>
-            <li>
-                <h3>Phase 3: Launch as Browser Extension</h3>
-                <p>Expand accessibility with a browser extension, integrating GudTek’s tools into your daily browsing experience.</p>
-            </li>
-            <li>
-                <h3>Phase 4: Add Talking While Trading</h3>
-                <p>Implement voice interaction features, allowing users to engage with GudTek through real-time voice commands for a hands-free trading experience.</p>
-            </li>
-        </ul>
-    </section>
-
-    <!-- White Paper Section -->
-    <section id="white-paper" class="white-paper" style="text-align: left;">
-        <h2>White Paper</h2>
-        <p>Welcome to the official whitepaper of GudTek – a decentralized ecosystem powered by innovation, transparency, and community empowerment.</p>
-
-        <p>GudTek Token (GUDT) is the native utility token driving the GudTek ecosystem. Built on blockchain fundamentals, GUDT aims to revolutionize the way value is stored, shared, and rewarded in digital economies.</p>
-      
-        <p>The mission of GudTek is to bridge the gap between emerging technologies and mass adoption by delivering practical blockchain-based products for real-world use cases.</p>
-      
-        <p>Our vision is a decentralized future where everyone can participate in global innovation without centralized barriers.</p>
-      
-        <p>GUDT is an ERC-20 compliant token initially deployed on the Ethereum blockchain, with plans to expand to multi-chain compatibility including BSC and Polygon.</p>
-      
-        <p>Use cases of GUDT include governance participation, staking rewards, service payments, and incentivized actions across the GudTek ecosystem.</p>
-      
-        <p>GudTek is designed to fuel a wide range of decentralized applications (dApps) under development, from secure identity solutions to DeFi tools and Web3 services.</p>
-      
-        <p>Token holders will gain early access to platform features, exclusive events, and future token airdrops.</p>
-      
-        <p>The initial supply of GUDT is capped at 1 billion tokens, ensuring scarcity and long-term value potential.</p>
-      
-        <p>Distribution of tokens is as follows: 30% public sale, 25% ecosystem development, 20% team and advisors (vested), 15% partnerships and marketing, 10% reserve.</p>
-      
-        <p>GudTek believes in fair launch principles. There are no pre-mines or hidden allocations. Everything is transparent and verifiable on-chain.</p>
-      
-        <p>The GUDT token launch will be executed via a public token generation event (TGE) with audited smart contracts to ensure trust and security.</p>
-      
-        <p>We are partnering with leading launchpads and DEXs to make the GUDT token widely accessible across the crypto community.</p>
-      
-        <p>Liquidity will be locked for a minimum of 12 months to protect early supporters and ensure long-term sustainability.</p>
-      
-        <p>GudTek is undergoing rigorous security audits and third-party evaluations to meet top industry standards.</p>
-      
-        <p>We are building a strong community through regular AMAs, governance proposals, bounties, and educational campaigns.</p>
-      
-        <p>The GudTek team is composed of blockchain engineers, cybersecurity experts, economists, and crypto-native builders.</p>
-      
-        <p>We are fully doxxed and committed to transparency and active community engagement through every phase of development.</p>
-      
-        <p>Our roadmap includes the release of the GudTek Wallet, cross-chain bridge tools, a DeFi launchpad, and enterprise-level API access.</p>
-      
-        <p>GUDT staking will go live post-launch, offering users high-yield opportunities and governance privileges.</p>
-      
-        <p>Future updates will include DAO integration, NFT minting tools, and ecosystem grants for developers and creators.</p>
-      
-        <p>We believe utility should come first, and speculation should be rooted in real value creation.</p>
-      
-        <p>GudTek isn’t just a token – it’s a movement to empower the decentralized economy with technology that works for everyone.</p>
-      
-        <p>Join us as we redefine what’s possible with Web3 – secure, scalable, community-owned.</p>
-      
-        
-      
-        <p>Let’s build the future together — with GudTek.</p>
-    
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <p>Join our community on <a href="https://t.me/joincommunity">Telegram</a> for updates and support!</p>
-    </footer>
-
-    <!-- Anime.js Particle Effect -->
-    <script>
-        const canvas = document.getElementById('particle-canvas');
-        const ctx = canvas.getContext('2d');
-
-        canvas.width = 100;
-        canvas.height = 100;
-
-        const particlesArray = [];
-        const numberOfParticles = 10;
-
-        class Particle {
-            constructor() {
-                this.x = Math.random() * canvas.width;
-                this.y = Math.random() * canvas.height;
-                this.size = Math.random() * 5 + 2;
-                this.speedX = Math.random() * 1 - 0.5;
-                this.speedY = Math.random() * 1 - 0.5;
-            }
-
-            update() {
-                this.x += this.speedX;
-                this.y += this.speedY;
-
-                if (this.size > 0.2) this.size -= 0.1;
-
-                if (this.x < 0 || this.x > canvas.width) this.speedX *= -1;
-                if (this.y < 0 || this.y > canvas.height) this.speedY *= -1;
-            }
-
-            draw() {
-                ctx.fillStyle = '#ffd700';
-                ctx.beginPath();
-                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-                ctx.fill();
-            }
-        }
-
-        function init() {
-            for (let i = 0; i < numberOfParticles; i++) {
-                particlesArray.push(new Particle());
-            }
-        }
-
-        function animateParticles() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            for (let i = 0; i < particlesArray.length; i++) {
-                particlesArray[i].update();
-                particlesArray[i].draw();
-
-                if (particlesArray[i].size <= 0.2) {
-                    particlesArray.splice(i, 1);
-                    i--;
-                    particlesArray.push(new Particle());
-                }
-            }
-            requestAnimationFrame(animateParticles);
-        }
-
-        init();
-        animateParticles();
-
-        // Anime.js animation for logo text
-        anime({
-            targets: '.logo',
-            translateY: [-10, 10],
-            direction: 'alternate',
-            loop: true,
-            easing: 'easeInOutSine',
-            duration: 2000
-        });
-    </script>
-    <script>import {
-        animate,
-        createTimeline,
-        createTimer,
-        stagger,
-        utils
-      } from "https://esm.sh/animejs";
-      
-      const creatureEl = document.querySelector("#creature");
-      const viewport = { w: window.innerWidth * 0.5, h: window.innerHeight * 0.5 };
-      const cursor = { x: 0, y: 0 };
-      const rows = 13;
-      const grid = [rows, rows];
-      const from = "center";
-      const scaleStagger = stagger([2, 5], { ease: "inQuad", grid, from });
-      const opacityStagger = stagger([1, 0.1], { grid, from });
-      
-      for (let i = 0; i < rows * rows; i++) {
-        creatureEl.appendChild(document.createElement("div"));
-      }
-      
-      const particuleEls = creatureEl.querySelectorAll("div");
-      
-      utils.set(creatureEl, {
-        width: rows * 10 + "em",
-        height: rows * 10 + "em"
-      });
-      
-      utils.set(particuleEls, {
-        x: 0,
-        y: 0,
-        scale: scaleStagger,
-        opacity: opacityStagger,
-        background: stagger([80, 20], {
-          grid,
-          from,
-          modifier: (v) => `hsl(4, 70%, ${v}%)`
-        }),
-        boxShadow: stagger([8, 1], {
-          grid,
-          from,
-          modifier: (v) => `0px 0px ${utils.round(v, 0)}em 0px var(--red)`
-        }),
-        zIndex: stagger([rows * rows, 1], { grid, from, modifier: utils.round(0) })
-      });
-      
-      const pulse = () => {
-        animate(particuleEls, {
-          keyframes: [
-            {
-              scale: 5,
-              opacity: 1,
-              delay: stagger(90, { start: 1650, grid, from }),
-              duration: 150
-            },
-            {
-              scale: scaleStagger,
-              opacity: opacityStagger,
-              ease: "inOutQuad",
-              duration: 600
-            }
-          ]
-        });
-      };
-      
-      const mainLoop = createTimer({
-        frameRate: 15, // Animate to the new cursor position every 250ms
-        onUpdate: () => {
-          animate(particuleEls, {
-            x: cursor.x,
-            y: cursor.y,
-            delay: stagger(40, { grid, from }),
-            duration: stagger(120, { start: 750, ease: "inQuad", grid, from }),
-            ease: "inOut",
-            composition: "blend" // This allows the animations to overlap nicely
-          });
-        }
-      });
-      
-      const autoMove = createTimeline()
-        .add(
-          cursor,
-          {
-            x: [-viewport.w * 0.45, viewport.w * 0.45],
-            modifier: (x) =>
-              x + Math.sin(mainLoop.currentTime * 0.0007) * viewport.w * 0.5,
-            duration: 3000,
-            ease: "inOutExpo",
-            alternate: true,
-            loop: true,
-            onBegin: pulse,
-            onLoop: pulse
-          },
-          0
-        )
-        .add(
-          cursor,
-          {
-            y: [-viewport.h * 0.45, viewport.h * 0.45],
-            modifier: (y) =>
-              y + Math.cos(mainLoop.currentTime * 0.00012) * viewport.h * 0.5,
-            duration: 1000,
-            ease: "inOutQuad",
-            alternate: true,
-            loop: true
-          },
-          0
-        );
-      
-      const manualMovementTimeout = createTimer({
-        duration: 1500,
-        onComplete: () => autoMove.play()
-      });
-      
-      const followPointer = (e) => {
-        const event = e.type === "touchmove" ? e.touches[0] : e;
-        cursor.x = event.pageX - viewport.w;
-        cursor.y = event.pageY - viewport.h;
-        autoMove.pause();
-        manualMovementTimeout.restart();
-      };
-      
-      document.addEventListener("mousemove", followPointer);
-      document.addEventListener("touchmove", followPointer);
-      </script>
-</body>
+   <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="robots" content="noindex,nofollow">
+      <title>Meme Token HTML5 Template</title>
+      <link rel="stylesheet" href="bootstrap.min.css">
+      <link rel="stylesheet" href="all.min.css">
+      <link rel="stylesheet" href="style.css">
+      <link rel="stylesheet" href="responsive.css">
+      <style type="text/css">@font-face {font-family:Barlow;font-style:normal;font-weight:100;src:url(/cf-fonts/s/barlow/5.0.11/latin/100/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Barlow;font-style:normal;font-weight:100;src:url(/cf-fonts/s/barlow/5.0.11/vietnamese/100/normal.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:swap;}@font-face {font-family:Barlow;font-style:normal;font-weight:100;src:url(/cf-fonts/s/barlow/5.0.11/latin-ext/100/normal.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Barlow;font-style:normal;font-weight:200;src:url(/cf-fonts/s/barlow/5.0.11/latin-ext/200/normal.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Barlow;font-style:normal;font-weight:200;src:url(/cf-fonts/s/barlow/5.0.11/vietnamese/200/normal.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:swap;}@font-face {font-family:Barlow;font-style:normal;font-weight:200;src:url(/cf-fonts/s/barlow/5.0.11/latin/200/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Barlow;font-style:normal;font-weight:300;src:url(/cf-fonts/s/barlow/5.0.11/vietnamese/300/normal.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:swap;}@font-face {font-family:Barlow;font-style:normal;font-weight:300;src:url(/cf-fonts/s/barlow/5.0.11/latin-ext/300/normal.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Barlow;font-style:normal;font-weight:300;src:url(/cf-fonts/s/barlow/5.0.11/latin/300/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Barlow;font-style:normal;font-weight:400;src:url(/cf-fonts/s/barlow/5.0.11/latin/400/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Barlow;font-style:normal;font-weight:400;src:url(/cf-fonts/s/barlow/5.0.11/latin-ext/400/normal.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Barlow;font-style:normal;font-weight:400;src:url(/cf-fonts/s/barlow/5.0.11/vietnamese/400/normal.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:swap;}@font-face {font-family:Barlow;font-style:normal;font-weight:500;src:url(/cf-fonts/s/barlow/5.0.11/vietnamese/500/normal.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:swap;}@font-face {font-family:Barlow;font-style:normal;font-weight:500;src:url(/cf-fonts/s/barlow/5.0.11/latin/500/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Barlow;font-style:normal;font-weight:500;src:url(/cf-fonts/s/barlow/5.0.11/latin-ext/500/normal.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Barlow;font-style:normal;font-weight:600;src:url(/cf-fonts/s/barlow/5.0.11/latin-ext/600/normal.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Barlow;font-style:normal;font-weight:600;src:url(/cf-fonts/s/barlow/5.0.11/latin/600/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Barlow;font-style:normal;font-weight:600;src:url(/cf-fonts/s/barlow/5.0.11/vietnamese/600/normal.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:swap;}@font-face {font-family:Barlow;font-style:normal;font-weight:700;src:url(/cf-fonts/s/barlow/5.0.11/latin/700/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Barlow;font-style:normal;font-weight:700;src:url(/cf-fonts/s/barlow/5.0.11/latin-ext/700/normal.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Barlow;font-style:normal;font-weight:700;src:url(/cf-fonts/s/barlow/5.0.11/vietnamese/700/normal.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:swap;}@font-face {font-family:Barlow;font-style:normal;font-weight:800;src:url(/cf-fonts/s/barlow/5.0.11/vietnamese/800/normal.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:swap;}@font-face {font-family:Barlow;font-style:normal;font-weight:800;src:url(/cf-fonts/s/barlow/5.0.11/latin/800/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Barlow;font-style:normal;font-weight:800;src:url(/cf-fonts/s/barlow/5.0.11/latin-ext/800/normal.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Barlow;font-style:normal;font-weight:900;src:url(/cf-fonts/s/barlow/5.0.11/latin-ext/900/normal.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Barlow;font-style:normal;font-weight:900;src:url(/cf-fonts/s/barlow/5.0.11/latin/900/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Barlow;font-style:normal;font-weight:900;src:url(/cf-fonts/s/barlow/5.0.11/vietnamese/900/normal.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:swap;}@font-face {font-family:Barlow;font-style:italic;font-weight:100;src:url(/cf-fonts/s/barlow/5.0.11/latin/100/italic.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Barlow;font-style:italic;font-weight:100;src:url(/cf-fonts/s/barlow/5.0.11/latin-ext/100/italic.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Barlow;font-style:italic;font-weight:100;src:url(/cf-fonts/s/barlow/5.0.11/vietnamese/100/italic.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:swap;}@font-face {font-family:Barlow;font-style:italic;font-weight:200;src:url(/cf-fonts/s/barlow/5.0.11/latin-ext/200/italic.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Barlow;font-style:italic;font-weight:200;src:url(/cf-fonts/s/barlow/5.0.11/vietnamese/200/italic.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:swap;}@font-face {font-family:Barlow;font-style:italic;font-weight:200;src:url(/cf-fonts/s/barlow/5.0.11/latin/200/italic.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Barlow;font-style:italic;font-weight:300;src:url(/cf-fonts/s/barlow/5.0.11/vietnamese/300/italic.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:swap;}@font-face {font-family:Barlow;font-style:italic;font-weight:300;src:url(/cf-fonts/s/barlow/5.0.11/latin/300/italic.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Barlow;font-style:italic;font-weight:300;src:url(/cf-fonts/s/barlow/5.0.11/latin-ext/300/italic.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Barlow;font-style:italic;font-weight:400;src:url(/cf-fonts/s/barlow/5.0.11/vietnamese/400/italic.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:swap;}@font-face {font-family:Barlow;font-style:italic;font-weight:400;src:url(/cf-fonts/s/barlow/5.0.11/latin-ext/400/italic.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Barlow;font-style:italic;font-weight:400;src:url(/cf-fonts/s/barlow/5.0.11/latin/400/italic.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Barlow;font-style:italic;font-weight:500;src:url(/cf-fonts/s/barlow/5.0.11/latin-ext/500/italic.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Barlow;font-style:italic;font-weight:500;src:url(/cf-fonts/s/barlow/5.0.11/vietnamese/500/italic.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:swap;}@font-face {font-family:Barlow;font-style:italic;font-weight:500;src:url(/cf-fonts/s/barlow/5.0.11/latin/500/italic.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Barlow;font-style:italic;font-weight:600;src:url(/cf-fonts/s/barlow/5.0.11/latin/600/italic.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Barlow;font-style:italic;font-weight:600;src:url(/cf-fonts/s/barlow/5.0.11/latin-ext/600/italic.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Barlow;font-style:italic;font-weight:600;src:url(/cf-fonts/s/barlow/5.0.11/vietnamese/600/italic.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:swap;}@font-face {font-family:Barlow;font-style:italic;font-weight:700;src:url(/cf-fonts/s/barlow/5.0.11/latin-ext/700/italic.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Barlow;font-style:italic;font-weight:700;src:url(/cf-fonts/s/barlow/5.0.11/latin/700/italic.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Barlow;font-style:italic;font-weight:700;src:url(/cf-fonts/s/barlow/5.0.11/vietnamese/700/italic.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:swap;}@font-face {font-family:Barlow;font-style:italic;font-weight:800;src:url(/cf-fonts/s/barlow/5.0.11/latin/800/italic.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Barlow;font-style:italic;font-weight:800;src:url(/cf-fonts/s/barlow/5.0.11/latin-ext/800/italic.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Barlow;font-style:italic;font-weight:800;src:url(/cf-fonts/s/barlow/5.0.11/vietnamese/800/italic.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:swap;}@font-face {font-family:Barlow;font-style:italic;font-weight:900;src:url(/cf-fonts/s/barlow/5.0.11/latin-ext/900/italic.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Barlow;font-style:italic;font-weight:900;src:url(/cf-fonts/s/barlow/5.0.11/latin/900/italic.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Barlow;font-style:italic;font-weight:900;src:url(/cf-fonts/s/barlow/5.0.11/vietnamese/900/italic.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:swap;}</style>
+      <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+   </head>
+   <body>
+      <header class="header-area">
+         <div class="container">
+            <div class="row">
+               <div class="col-12">
+                  <div class="header-main d-flex justify-content-between align-items-center">
+                     <div class="header-logo">
+                        <a href="index.html"><img src="logo.png" alt="logo" style="width: 70%;margin-top: 2%;"></a>
+                     </div>
+                     <div class="header-right d-flex align-items-center">
+                        <nav class="navbar navbar-expand-lg">
+                           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                              <div class="sandwitch">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                              </div>
+                           </button>
+                           <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                 <li class="nav-item active">
+                                    <a class="nav-link" aria-current="page" href="#">Home</a>
+                                 </li>
+                                 <li class="nav-item">
+                                    <a class="nav-link" href="#about">About</a>
+                                 </li>
+                                 <li class="nav-item">
+                                    <a class="nav-link" href="#where-to-buy">Where to buy</a>
+                                 </li>
+                                 <li class="nav-item">
+                                    <a class="nav-link" href="#tokenomics">Tokenomics</a>
+                                 </li>
+                                 <li class="nav-item">
+                                    <a class="nav-link" href="#roadmap">Roadmap</a>
+                                 </li>
+                                 <li class="nav-item">
+                                    <a class="nav-link" href="#token">Token</a>
+                                 </li>
+                                 <li class="nav-item">
+                                    <a class="nav-link" href="#contact">Contact</a>
+                                 </li>
+                              </ul>
+                              <div class="header-btn ms-3">
+                                 <a class="btn btn-secondary" href="">Buy Now</a>
+                              </div>
+                           </div>
+                        </nav>
+                        <div class="header-btn ms-3">
+                           <a class="btn btn-secondary" href="">Buy Now</a>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </header>
+      <main class="main--area p-120 pt-0">
+         <section class="slider__area slider__bg position-relative">
+            <div class="slider-activee">
+               <div class="single-slider">
+                  <div class="container custom-container">
+                     <div class="row justify-content-between">
+                        <div class="col-lg-6">
+                           <div class="slider__content">
+                              <h6 class="sub-title">About Gudtek</h6>
+                              <h2 class="title">gudtek</h2>
+                              <h3>ai revolution in trading</h3>
+                              <p>Your On-Chain AI Sidekick!
+                                 Drop any contract address (CA) into Telegram  let Gudtek, the AI-powered beast on Solana, instantly scan and decode it. From taxes, honeypot checks, LP lock, to hidden mint/blacklist functions — Gudtek gives you a real-time smart summary in plain English, powered by cutting-edge AI. No more guessing. No more rugs. Just facts, fast.
+                                 Try it FREE on Telegram or the web. Built for degens, by degens.</p>
+                              <div class="slider__btn">
+                                 <a href="https://t.me/Gud_tek_bot" class="btn btn-primary"><span>try now</span></a>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="col-xxl-6 col-xl-5 col-lg-6">
+                           <div class="slider__img text-center">
+                              <img src="images/slider/slider_img01.png">
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="slider__shapes">
+               <img src="images/slider/slider_shape01.png" alt="shape">
+               <img src="images/slider/slider_shape02.png" alt="shape">
+               <img src="images/slider/slider_shape03.png" alt="shape">
+               <img src="images/slider/slider_shape04.png" alt="shape">
+            </div>
+         </section>
+         <section class="count-area position-relative">
+            <div class="container">
+               <div class="row">
+                  <div class="col-12">
+                     <div class="count-main d-flex justify-content-between">
+                        <div class="count-box text-center">
+                           <span>Bot</span>
+                           <h2>Done</h2>
+                        </div>
+                        <div class="count-box text-center">
+                           <span>Testing</span>
+                           <h2>done</h2>
+                        </div>
+                        <div class="count-box text-center">
+                           <span>Launch</span>
+                           <h2>soon</h2>
+                        </div>
+                        <div class="count-box text-center">
+                           <span>Giveaway</span>
+                           <h2>soon</h2>
+                        </div>   
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </section>
+         <section class="about-section p-120" id="about">
+            <div class="container">
+               <div class="row align-items-center">
+                  <div class="col-lg-6 col-12">
+                     <div class="about-media text-center">
+                        <img src="about.png" alt="">
+                     </div>
+                  </div> 
+                  <div class="col-12">
+                     <div class="about-info text-center">
+                        <div class="section-title mb-30">
+                            <h2>About <span>gud tek</span></h2>
+                        </div>
+                        <div class="about-des">
+                           <p>Meet Gudtek – your on-chain AI sidekick built for the Solana degens. Just drop any contract address (CA) into Telegram or our web app, and Gudtek instantly scans and decodes it using powerful AI. Whether you’re checking for buy/sell taxes, sniffing out honeypots, verifying LP lock status, or hunting down hidden mint and blacklist functions, Gudtek delivers a clear, real-time summary in plain English — no more code, no more confusion. Say goodbye to getting rugged and hello to informed decisions. Fast, accurate, and reliable, Gudtek is the tool every trader needs in their pocket. Built for degens, by degens — and it’s completely free to try on Telegram or the web. No more guessing. Just facts. Just Gudtek.</p>
+                           <div class="about-btn">
+                              <a class="btn btn-primary" href="https://t.me/Gud_tek_bot"><span>try now</span></a>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </section>
+         <section class="how-to-buy-section" id="where-to-buy">
+            <div class="container">
+               <div class="row">
+                  <div class="col-12">
+                     <div class="section-title mb-30">
+                        <h2>how  <span>to use</span></h2>
+                     </div>
+                  </div>
+               </div>
+               <div class="row align-items-center">
+                  <div class="col-lg-6">
+                     <div class="buy-points">
+                        <ul>
+                           <li>Open the GudTek bot on Telegram.</li>
+<li>Type <strong>/start</strong> to initiate the bot.</li>
+<li>Begin asking the bot anything related to lead generation or outreach automation.</li>
+<li>Send it any contract address (CA), and the bot will instantly reply with key details.</li>
+<li>Use the bot’s quick tools to gather leads, extract business info, or generate custom outreach messages.</li>
+<li>Enjoy real-time responses and smart automation for your freelancing or agency needs.</li>
+                        </ul>
+                        <div class="buy-btns">
+                          
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-lg-6">
+                     <div class="buy-media text-center">
+                        <img src="buy-token.png" alt="">
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </section>
+         <section class="tokenomics-section p-120" id="tokenomics">
+            <div class="container">
+               <div class="row">
+                  <div class="col-12">
+                     <div class="section-title text-center mb-60">
+                        <h2>Tokenomics</h2>
+                     </div>
+                  </div>
+               </div>
+               <div class="row align-items-center">
+                  <div class="col-lg-6 col-12">
+                     <div class="tokenomics-media">
+                        <img src="tokenomics.png">
+                     </div>
+                  </div>
+                  <div class="col-lg-6 col-12">
+                     <div class="tokenomics-intro">
+                        <div class="tokenomics-item">
+                           <h4><span></span> PumpFun</h4>
+                           <p>Launch on PumpFUn</p>
+                        </div>
+                        <div class="tokenomics-item">
+                           <h4><span></span>5%</h4>
+                           <p>Team </p>
+                        </div>
+                        <div class="tokenomics-item">
+                           <h4><span></span> 90%</h4>
+                           <p>Community</p>
+                        </div>
+                        <div class="tokenomics-item">
+                           <h4><span></span> 5%</h4>
+                           <p>Airdrop</p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </section>
+         <section class="roadmap-section" id="roadmap">
+            <div class="container">
+               <div class="row">
+                  <div class="col-xl-5 col-lg-6">
+                     <div class="roadmap-left">
+                        <div class="section-title mb-30">
+                           <h2>A LOOK INTO <span>ROADMAPS</span> SEASONS</h2>
+                        </div>
+                        <p class="mb-30">With Season 1 Ending with our play and Duis elementum sollicitudin is yaugue euismods Nulla ulla Player-focused updates games from Mobile App and Enjoy.</p>
+                        <div class="roadmap-btn">
+                           <a class="btn btn-secondary" href="">Roadmap</a>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-xl-7 col-lg-6">
+                     <div class="roadmap-steps-wrap">
+                        <div class="roadmap-steps-item">
+                           <h3>Phase 1: The start</h3>
+                           <p>Telegram Bot + Token Launch</p>
+                           <ul>
+                              <li>Grow The Community On Twitter And Telegram</li>
+                              <li>Get Featured On Top-Tier Crypto Media</li>
+                              <li>Secure A Spot On Coinmarketcap And CoinGecko</li>
+                           </ul>
+                        </div>
+                        <div class="roadmap-steps-item">
+                           <h3>Phase 2: Extension</h3>
+                           <p>Real Time AI Data in The Platforms</p>
+                           <ul>
+                              <li>Integrate With Other Platforms</li>
+                              <li>Real Time Info + Tweets Data</li>
+                           </ul>
+                        </div>
+                        <div class="roadmap-steps-item">
+                           <h3>Phase 3: The Talks</h3>
+                           <p>Talk With AI in Voice Calls</p>
+                           <ul>
+                              <li>Add Voice call feature While Trading</li>
+                              
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </section>
+         <section class="token-area p-120 pb-0" id="token">
+            <div class="container">
+               <div class="row align-items-center">
+                  <div class="col-lg-6 col-12">
+                     <div class="token-info">
+                        <div class="section-title mb-30">
+                           <h2>$GTK <span>Token</span></h2>
+                        </div>
+                        <p>GudTek Token ($GTK) is the native utility token powering the GudTek ecosystem. $GTK unlocks premium features within the GudTek Bot, including advanced lead scraping, bulk messaging, and priority processing. Holders can stake tokens for exclusive perks, access AI-powered insights, and enjoy reduced fees across the platform. $GTK fuels automation, rewards user engagement, and drives the future of decentralized outreach.</p>
+                        <div class="token-btn">
+                           
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-lg-5 offset-lg-1 col-12">
+                     <div class="token-media">
+                        <img src="token.png" alt="">
+                     </div>
+                  </div>
+               </div>
+               <div class="row">
+                  <div class="col-12">
+                     <div class="token-supply-main">
+                        <div class="token-supply d-flex justify-content-between">
+                           <div class="supply-box position-relative">
+                              <img src="dollar.png" alt="">
+                              <h3>Total Supply</h3>
+                              <h2>1,000,000,000 <span>(One Billion)</span></h2>
+                           </div>
+                           <div class="supply-box text-end position-relative">
+                              <img src="money.png" alt="">
+                              <h3>Team Holding</h3>
+                              <h2>5,000,000 <span>(Five Million)</span></h2>
+                           </div>
+                           <svg xmlns="http://www.w3.org/2000/svg" width="65" height="5" viewBox="0 0 65 5">
+                              <path d="M968,5630h65l-4,5H972Z" transform="translate(-968 -5630)"></path>
+                           </svg>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </section>
+      </main>
+      <footer class="footer-style-two has-footer-animation" id="contact">
+           <div class="footer__country">
+               <div class="container custom-container">
+                   <div class="row">
+                       <div class="col-6">
+                           <div class="section-title mb-30">
+                               <h2><span>MEME</span></h2>
+                           </div>
+                       </div>
+                       <div class="col-6">
+                           <div class="section-title mb-30 text-center text-sm-end">
+                               <h2><span>Tokens</span></h2>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+           </div>
+           <div class="footer__two-widgets">
+               <div class="container custom-container">
+                   <div class="row">
+                       <div class="col-md-4 col-sm-7 order-1 order-md-0">
+                           <div class="footer-el-widget">
+                               <h4 class="title">About us</h4>
+                               <div class="footer-el-menu">
+                                   <ul class="list-wrap start">
+                                       <li><a href="">Tokenomics</a></li>
+                                       <li><a href="">Roadmap</a></li>
+                                       <li><a href="">SWAP</a></li>
+                                   </ul>
+                               </div>
+                           </div>
+                       </div>
+                       <div class="col-md-4 col-sm-5 order-0 order-md-2">
+                           <div class="footer-el-widget text-start text-md-center widget_nav_menu">
+                               <div class="footer-el-logo mb-30">
+                                   <a href="index.html"><img src="logo.png" alt="Mykd"></a>
+                               </div>
+                               <div class="footer-el-menu">
+                                   <ul class="list-wrap">
+                                       <li><a href="">Home</a></li>
+                                       <li><a href="">About Us</a></li>
+                                       
+                                   </ul>
+                               </div>
+                           </div>
+                       </div>
+                       <div class="col-md-4 col-sm-7 order-3">
+                           <div class="footer-el-widget text-start text-md-end">
+                               <h4 class="title">Coming Soon</h4>
+                               <div class="footer-el-menu">
+                                   <ul class="list-wrap end">
+                                       <li><a href="">NFT</a></li>
+                                       
+                                   </ul>
+                               </div>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+           </div>
+           <div class="copyright__wrap -style-two">
+               <div class="container custom-container">
+                   <div class="row align-items-center">
+                       <div class="col-lg-6">
+                           <div class="copyright__text text-center text-lg-start">
+                               <p>Copyright Â© 2023 - All Rights Reserved By <span>MEME Tokens</span></p>
+                           </div>
+                       </div>
+                       <div class="col-lg-6">
+                           <div class="copyright__menu">
+                               <ul class="list-wrap d-flex flex-wrap justify-content-center justify-content-lg-end">
+                                   <li><a href="">Contact Us</a></li>
+                                   <li><a href="">Join our team</a></li>
+                                   <li><a href="">Privacy Policy</a></li>
+                               </ul>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </footer>
+       <div id="to-top"><i class="fas fa-arrow-up fa-fw"></i></div>
+      <script src="jquery-3.6.0.min.js"></script>
+      <script src="bootstrap.bundle.min.js"></script>
+      <script src="custom.js"></script>
+   </body>
 </html>

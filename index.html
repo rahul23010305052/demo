@@ -1,405 +1,850 @@
 <!DOCTYPE html>
-<html lang="en">
-   <head>
-      <meta charset="UTF-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="robots" content="noindex,nofollow">
-      <title>GUDTEK</title>
-      <link rel="stylesheet" href="bootstrap.min.css">
-      <link rel="stylesheet" href="all.min.css">
-      <link rel="stylesheet" href="style.css">
-      <link rel="stylesheet" href="responsive.css">
-      <style type="text/css">@font-face {font-family:Barlow;font-style:normal;font-weight:100;src:url(/cf-fonts/s/barlow/5.0.11/latin/100/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Barlow;font-style:normal;font-weight:100;src:url(/cf-fonts/s/barlow/5.0.11/vietnamese/100/normal.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:swap;}@font-face {font-family:Barlow;font-style:normal;font-weight:100;src:url(/cf-fonts/s/barlow/5.0.11/latin-ext/100/normal.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Barlow;font-style:normal;font-weight:200;src:url(/cf-fonts/s/barlow/5.0.11/latin-ext/200/normal.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Barlow;font-style:normal;font-weight:200;src:url(/cf-fonts/s/barlow/5.0.11/vietnamese/200/normal.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:swap;}@font-face {font-family:Barlow;font-style:normal;font-weight:200;src:url(/cf-fonts/s/barlow/5.0.11/latin/200/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Barlow;font-style:normal;font-weight:300;src:url(/cf-fonts/s/barlow/5.0.11/vietnamese/300/normal.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:swap;}@font-face {font-family:Barlow;font-style:normal;font-weight:300;src:url(/cf-fonts/s/barlow/5.0.11/latin-ext/300/normal.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Barlow;font-style:normal;font-weight:300;src:url(/cf-fonts/s/barlow/5.0.11/latin/300/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Barlow;font-style:normal;font-weight:400;src:url(/cf-fonts/s/barlow/5.0.11/latin/400/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Barlow;font-style:normal;font-weight:400;src:url(/cf-fonts/s/barlow/5.0.11/latin-ext/400/normal.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Barlow;font-style:normal;font-weight:400;src:url(/cf-fonts/s/barlow/5.0.11/vietnamese/400/normal.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:swap;}@font-face {font-family:Barlow;font-style:normal;font-weight:500;src:url(/cf-fonts/s/barlow/5.0.11/vietnamese/500/normal.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:swap;}@font-face {font-family:Barlow;font-style:normal;font-weight:500;src:url(/cf-fonts/s/barlow/5.0.11/latin/500/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Barlow;font-style:normal;font-weight:500;src:url(/cf-fonts/s/barlow/5.0.11/latin-ext/500/normal.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Barlow;font-style:normal;font-weight:600;src:url(/cf-fonts/s/barlow/5.0.11/latin-ext/600/normal.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Barlow;font-style:normal;font-weight:600;src:url(/cf-fonts/s/barlow/5.0.11/latin/600/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Barlow;font-style:normal;font-weight:600;src:url(/cf-fonts/s/barlow/5.0.11/vietnamese/600/normal.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:swap;}@font-face {font-family:Barlow;font-style:normal;font-weight:700;src:url(/cf-fonts/s/barlow/5.0.11/latin/700/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Barlow;font-style:normal;font-weight:700;src:url(/cf-fonts/s/barlow/5.0.11/latin-ext/700/normal.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Barlow;font-style:normal;font-weight:700;src:url(/cf-fonts/s/barlow/5.0.11/vietnamese/700/normal.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:swap;}@font-face {font-family:Barlow;font-style:normal;font-weight:800;src:url(/cf-fonts/s/barlow/5.0.11/vietnamese/800/normal.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:swap;}@font-face {font-family:Barlow;font-style:normal;font-weight:800;src:url(/cf-fonts/s/barlow/5.0.11/latin/800/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Barlow;font-style:normal;font-weight:800;src:url(/cf-fonts/s/barlow/5.0.11/latin-ext/800/normal.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Barlow;font-style:normal;font-weight:900;src:url(/cf-fonts/s/barlow/5.0.11/latin-ext/900/normal.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Barlow;font-style:normal;font-weight:900;src:url(/cf-fonts/s/barlow/5.0.11/latin/900/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Barlow;font-style:normal;font-weight:900;src:url(/cf-fonts/s/barlow/5.0.11/vietnamese/900/normal.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:swap;}@font-face {font-family:Barlow;font-style:italic;font-weight:100;src:url(/cf-fonts/s/barlow/5.0.11/latin/100/italic.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Barlow;font-style:italic;font-weight:100;src:url(/cf-fonts/s/barlow/5.0.11/latin-ext/100/italic.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Barlow;font-style:italic;font-weight:100;src:url(/cf-fonts/s/barlow/5.0.11/vietnamese/100/italic.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:swap;}@font-face {font-family:Barlow;font-style:italic;font-weight:200;src:url(/cf-fonts/s/barlow/5.0.11/latin-ext/200/italic.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Barlow;font-style:italic;font-weight:200;src:url(/cf-fonts/s/barlow/5.0.11/vietnamese/200/italic.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:swap;}@font-face {font-family:Barlow;font-style:italic;font-weight:200;src:url(/cf-fonts/s/barlow/5.0.11/latin/200/italic.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Barlow;font-style:italic;font-weight:300;src:url(/cf-fonts/s/barlow/5.0.11/vietnamese/300/italic.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:swap;}@font-face {font-family:Barlow;font-style:italic;font-weight:300;src:url(/cf-fonts/s/barlow/5.0.11/latin/300/italic.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Barlow;font-style:italic;font-weight:300;src:url(/cf-fonts/s/barlow/5.0.11/latin-ext/300/italic.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Barlow;font-style:italic;font-weight:400;src:url(/cf-fonts/s/barlow/5.0.11/vietnamese/400/italic.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:swap;}@font-face {font-family:Barlow;font-style:italic;font-weight:400;src:url(/cf-fonts/s/barlow/5.0.11/latin-ext/400/italic.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Barlow;font-style:italic;font-weight:400;src:url(/cf-fonts/s/barlow/5.0.11/latin/400/italic.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Barlow;font-style:italic;font-weight:500;src:url(/cf-fonts/s/barlow/5.0.11/latin-ext/500/italic.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Barlow;font-style:italic;font-weight:500;src:url(/cf-fonts/s/barlow/5.0.11/vietnamese/500/italic.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:swap;}@font-face {font-family:Barlow;font-style:italic;font-weight:500;src:url(/cf-fonts/s/barlow/5.0.11/latin/500/italic.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Barlow;font-style:italic;font-weight:600;src:url(/cf-fonts/s/barlow/5.0.11/latin/600/italic.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Barlow;font-style:italic;font-weight:600;src:url(/cf-fonts/s/barlow/5.0.11/latin-ext/600/italic.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Barlow;font-style:italic;font-weight:600;src:url(/cf-fonts/s/barlow/5.0.11/vietnamese/600/italic.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:swap;}@font-face {font-family:Barlow;font-style:italic;font-weight:700;src:url(/cf-fonts/s/barlow/5.0.11/latin-ext/700/italic.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Barlow;font-style:italic;font-weight:700;src:url(/cf-fonts/s/barlow/5.0.11/latin/700/italic.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Barlow;font-style:italic;font-weight:700;src:url(/cf-fonts/s/barlow/5.0.11/vietnamese/700/italic.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:swap;}@font-face {font-family:Barlow;font-style:italic;font-weight:800;src:url(/cf-fonts/s/barlow/5.0.11/latin/800/italic.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Barlow;font-style:italic;font-weight:800;src:url(/cf-fonts/s/barlow/5.0.11/latin-ext/800/italic.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Barlow;font-style:italic;font-weight:800;src:url(/cf-fonts/s/barlow/5.0.11/vietnamese/800/italic.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:swap;}@font-face {font-family:Barlow;font-style:italic;font-weight:900;src:url(/cf-fonts/s/barlow/5.0.11/latin-ext/900/italic.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Barlow;font-style:italic;font-weight:900;src:url(/cf-fonts/s/barlow/5.0.11/latin/900/italic.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Barlow;font-style:italic;font-weight:900;src:url(/cf-fonts/s/barlow/5.0.11/vietnamese/900/italic.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:swap;}</style>
-      <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-   </head>
-   <body>
-      <header class="header-area">
-         <div class="container">
-            <div class="row">
-               <div class="col-12">
-                  <div class="header-main d-flex justify-content-between align-items-center">
-                     <div class="header-logo">
-                        <a href="index.html"><img src="logo.png" alt="logo" style="width: 70%;margin-top: 2%;"></a>
-                     </div>
-                     <div class="header-right d-flex align-items-center">
-                        <nav class="navbar navbar-expand-lg">
-                           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                              <div class="sandwitch">
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                              </div>
-                           </button>
-                           <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                                 <li class="nav-item active">
-                                    <a class="nav-link" aria-current="page" href="#">Home</a>
-                                 </li>
-                                 <li class="nav-item">
-                                    <a class="nav-link" href="#about">About</a>
-                                 </li>
-                                 <li class="nav-item">
-                                    <a class="nav-link" href="#where-to-buy">Where to buy</a>
-                                 </li>
-                                 <li class="nav-item">
-                                    <a class="nav-link" href="#tokenomics">Tokenomics</a>
-                                 </li>
-                                 <li class="nav-item">
-                                    <a class="nav-link" href="#roadmap">Roadmap</a>
-                                 </li>
-                                 <li class="nav-item">
-                                    <a class="nav-link" href="#token">Token</a>
-                                 </li>
-                                 <li class="nav-item">
-                                    <a class="nav-link" href="#contact">Contact</a>
-                                 </li>
-                              </ul>
-                              <div class="header-btn ms-3">
-                                 <a class="btn btn-secondary" href="">Buy Now</a>
-                              </div>
-                           </div>
-                        </nav>
-                        <div class="header-btn ms-3">
-                           <a class="btn btn-secondary" href="">Buy Now</a>
-                        </div>
-                     </div>
-                  </div>
-               </div>
+<html lang="en" data-bs-theme="light">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Memeworld: A feature-rich HTML template for memecoin, crypto, and ICO projects. Modern design, responsive layout, and ready for Crypto Project">
+    <meta name="keywords" content="memecoin, crypto, ico, html template, themeforest, meme coin, cryptocurrency, blockchain, token, landing page, web3, nft, decentralized, finance, investment">
+    <meta name="author" content="bplugins">
+    <title>GUDTEK</title>
+    <link rel="icon" href="favicon.png" type="image/png">
+    <link rel="stylesheet" href="bootstrap.css">
+    <link rel="stylesheet" href="bootstrap-icons.css">
+    <link rel="stylesheet" href="simplebar.css">
+    <link rel="stylesheet" href="swiper-bundle.css">
+    <link rel="stylesheet" href="ff-1.css">
+    <link rel="stylesheet" href="ff-2.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-primary overflow-x-hidden">
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="pl">
+            <div class="pl__coin">
+                <div class="pl__coin-flare"></div>
+                <div class="pl__coin-flare"></div>
+                <div class="pl__coin-flare"></div>
+                <div class="pl__coin-flare"></div>
+                <div class="pl__coin-layers">
+                    <div class="pl__coin-layer">
+                        <div class="pl__coin-inscription"></div>
+                    </div>
+                    <div class="pl__coin-layer"></div>
+                    <div class="pl__coin-layer"></div>
+                    <div class="pl__coin-layer"></div>
+                    <div class="pl__coin-layer">
+                        <div class="pl__coin-inscription"></div>
+                    </div>
+                </div>
             </div>
-         </div>
-      </header>
-      <main class="main--area p-120 pt-0">
-         <section class="slider__area slider__bg position-relative">
-            <div class="slider-activee">
-               <div class="single-slider">
-                  <div class="container custom-container">
-                     <div class="row justify-content-between">
+            <div class="pl__shadow"></div>
+        </div>
+    </div>
+    <!-- Preloader End -->
+    <!-- Navbar  -->
+    <nav class="navbar navbar-expand-lg primary-header primary-header--transparent-light-alt primary-header--fixed top-0 primary-header-crossed:full-dark">
+        <div class="container align-items-lg-center">
+            <!-- Logo -->
+            <a class="logo" href="index.html">
+                <h4 style="color:white">GUDTEK</h4>
+            </a>
+            <!-- Logo End-->
+            <!-- Mobile Menu Toggler -->
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbar0" aria-controls="navbar0" aria-expanded="false" aria-label="Toggle navigation">
+                <iconify-icon icon="solar:hamburger-menu-line-duotone"></iconify-icon>
+            </button>
+            <!-- Mobile Menu Toggler End-->
+            <!-- Menu -->
+            <div class="collapse navbar-collapse" id="navbar0">
+                
+                <div class="d-flex align-items-center gap-3 ms-lg-auto">
+                    <a href="https://x.com/Gud_tek_" class="btn btn-light fw-bold text-heading "> FOLLOW </a>
+                </div>
+            </div>
+            <!-- Menu End -->
+        </div>
+    </nav>
+    <!-- Navbar End -->
+    <div id="smooth-wrapper">
+        <div id="smooth-content">
+            <!-- Hero -->
+            <section class="hero-1 section-space-top">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-10 col-xl-9 text-center">
+                            <span class="d-inline-block mb-4 text-secondary fs-24 text-stroke gsap-text-animation" data-split-type="words" data-delay="0.5"> AI REVOLUTION IN MEMECOINS</span>
+                            <h1 class="hero-1__title mb-10 text-light text-stroke-md text-shadow-md gsap-text-animation" data-split-type="chars" data-delay="0.75"> GUDTEK </h1>
+                            <div class="d-flex justify-content-center align-items-center flex-wrap gap-4">
+                                <a href="https://x.com/Gud_tek_" class="btn btn-lg btn-secondary text-heading align-items-center rounded gsap-fade-in" data-delay="1" data-y="50%">
+                                    <iconify-icon icon="mingcute:binance-coin-sol-fill"></iconify-icon>
+                                    <span class="d-inline-block ff-1">Twitter</span>
+                                </a>
+                                <a href="https://t.me/Gud_tek_bot" class="btn btn-lg btn-light text-heading align-items-center rounded rounded gsap-fade-in" data-delay="1.15" data-y="50%">
+                                    <iconify-icon icon="mingcute:binance-coin-bn-fill"></iconify-icon>
+                                    <span class="d-inline-block ff-1">Try Now</span>
+                                </a>
+                            </div>
+                            <img src="image.png" alt="image" class="img-fluid mt-10 gsap-fade-in" data-delay="1.25">
+                        </div>
+                    </div>
+                </div>
+                <img src=" hero-bg-1.png" alt="image" class="img-fluid w-100 position-absolute start-0 bottom-0 z-n1 pointer-none gsap-fade-in" data-delay="3.5">
+                <img src=" hero-cloud-1.png" alt="image" class="img-fluid w-100 position-absolute start-50 bottom-0 translate-middle-x z-n1 gsap-fade-in" data-delay="1.5">
+                <img src=" hero-element-1.png" alt="image" class="img-fluid hero-1__element hero-1__element--1 gsap-fade-in" data-delay="3.1">
+                <img src=" hero-element-2.png" alt="image" class="img-fluid hero-1__element hero-1__element--2 gsap-fade-in" data-delay="2.75">
+                <img src=" hero-element-3.png" alt="image" class="img-fluid hero-1__element hero-1__element--3 gsap-fade-in" data-delay="3.2">
+                <img src=" hero-element-4.png" alt="image" class="img-fluid hero-1__element hero-1__element--4 gsap-fade-in" data-delay="2.5">
+                <img src=" hero-element-5.png" alt="image" class="img-fluid hero-1__element hero-1__element--5 gsap-fade-in" data-delay="3.3">
+                <img src=" hero-element-6.png" alt="image" class="img-fluid hero-1__element hero-1__element--6 gsap-fade-in" data-delay="3">
+                <img src=" hero-element-7.png" alt="image" class="img-fluid hero-1__element hero-1__element--7 gsap-fade-in" data-delay="3.4">
+                <img src=" hero-element-8.png" alt="image" class="img-fluid hero-1__element hero-1__element--8 gsap-fade-in" data-delay="1.75" data-y="100">
+                <img src=" hero-element-9.png" alt="image" class="img-fluid hero-1__element hero-1__element--9 gsap-fade-in" data-delay="1.75" data-y="100">
+                <img src=" hero-element-10.png" alt="image" class="img-fluid hero-1__element hero-1__element--10 gsap-fade-in" data-delay="1.75" data-y="100">
+                <img src=" hero-element-11.png" alt="image" class="img-fluid hero-1__element hero-1__element--11 gsap-fade-in" data-delay="1.75" data-y="100">
+                <img src=" hero-element-12.png" alt="image" class="img-fluid hero-1__element hero-1__element--12 gsap-fade-in" data-delay="1.75" data-y="100">
+                <img src=" hero-element-13.png" alt="image" class="img-fluid hero-1__element hero-1__element--13 gsap-fade-in" data-delay="1.75" data-y="100">
+            </section>
+            <!-- Hero End -->
+            <!-- Ticker -->
+            <div class="ticker-1 py-4 bg-light border-top border-bottom border-2x border-dark gsap-fade-in" data-delay="3.5">
+                <div class="container-fluid p-0">
+                    <div class="row g-0">
+                        <div class="col-12">
+                            <div class="scroller-x" data-speed="slow" data-direction="right">
+                                <ul class="list list-row align-items-center gap-4 scroller-x__list">
+                                    <li>
+                                        <img src="  icon-coin-1.png" alt="image" class="img-fluid">
+                                    </li>
+                                    <li>
+                                        <h4 class="mb-0 text-secondary text-stroke text-shadow"> AI AGENT </h4>
+                                    </li>
+                                    <li>
+                                        <img src="  icon-coin-1.png" alt="image" class="img-fluid">
+                                    </li>
+                                    <li>
+                                        <h4 class="mb-0 text-primary text-stroke text-shadow"> SCANNER </h4>
+                                    </li>
+                                    <li>
+                                        <img src="  icon-coin-2.png" alt="image" class="img-fluid">
+                                    </li>
+                                    <li>
+                                        <h4 class="mb-0 text-secondary text-stroke text-shadow"> CHATTING</h4>
+                                    </li>
+                                    <li>
+                                        <img src="  icon-coin-1.png" alt="image" class="img-fluid">
+                                    </li>
+                                    <li>
+                                        <h4 class="mb-0 text-primary text-stroke text-shadow"> TRADING </h4>
+                                    </li>
+                                    <li>
+                                        <img src="  icon-coin-2.png" alt="image" class="img-fluid">
+                                    </li>
+                                    <li>
+                                        <h4 class="mb-0 text-secondary text-stroke text-shadow"> INSIDER </h4>
+                                    </li>
+                                    <li>
+                                        <img src="  icon-coin-1.png" alt="image" class="img-fluid">
+                                    </li>
+                                    <li>
+                                        <h4 class="mb-0 text-primary text-stroke text-shadow"> AI BUDDY </h4>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Ticker End -->
+            <!-- About Section -->
+            <div class="section-space-y overflow-hidden">
+                <div class="container">
+                    <div class="row g-4 align-items-center">
+                        <div class="col-md-5">
+                            <div class="position-relative z-1 gsap-fade-in" data-scroll-trigger="true" data-delay="0.5">
+                                <img src="image copy.png" alt="image" class="img-fluid">
+                                
+                                <img src=" about-element-4.png" alt="image" class="img-fluid position-absolute start-0 top-0 translate-middle pointer-none z-n1">
+                            </div>
+                        </div>
+                        <div class="col-md-7">
+                            <div class="position-relative bg-secondary px-6 py-8 px-xl-10 py-xl-12 px-xxl-15 py-xxl-18 rounded-5 border border-2x border-dark shadow-sharp-md z-1 gsap-fade-in" data-scroll-trigger="true" data-delay="0.75">
+                                <h2 class="text-light text-stroke text-shadow">ABOUT GUDTEK</h2>
+                                <p class="mb-8 fs-24 text-heading"> GudTEk aims to create the solana chain rug free and easy to trade with the help of artificial intelligence.</p>
+                                <div class="d-flex align-items-center flex-wrap gap-6">
+                                    <a href="https://t.me/Gud_tek_bot" class="btn btn-lg btn-light text-heading align-items-center rounded">
+                                        <iconify-icon icon="ic:twotone-thumb-up-off-alt"></iconify-icon>
+                                        <span class="d-inline-block ff-1">Try Now</span>
+                                    </a>
+                                    <ul class="list list-row align-items-center flex-wrap gap-4">
+                                        
+                                        <li>
+                                            <a href="https://x.com/Gud_tek_" class="btn btn-icon btn-lg btn-light rounded-circle">
+                                                <iconify-icon icon="prime:twitter"></iconify-icon>
+                                            </a>
+                                        </li>
+                                        
+                                    </ul>
+                                </div>
+                                <img src="bout-element-1.png" alt="image" class="img-fluid d-none d-xl-block position-absolute start-0 top-0 translate-middle-y pointer-none">
+                                <img src="about-element-2.png" alt="image" class="img-fluid d-none d-xl-block position-absolute end-0 top-0 translate-middle-y pointer-none">
+                                <img src="about-element-3.png" alt="image" class="img-fluid d-none d-xxl-block position-absolute start-100 top-100 translate-middle pointer-none">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- About Section End -->
+            <!-- How To Buy Section -->
+            <div class="section-space-top">
+                <div class="container-fluid container-fhd">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="how-to-buy-section-1 section-space-y">
+                                <div class="section-space-md-bottom">
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <h2 class="mb-0 text-center text-light text-stroke-md text-shadow-md fs-6vw gsap-text-animation" data-split-type="words" data-scroll-trigger="true"> HOW TO <span class="text-secondary">BUY</span>
+                                                </h2>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="container">
+                                    <div class="row g-4 align-items-center">
+                                        <div class="col-xl-4">
+                                            <div class="row g-4">
+                                                <div class="col-md-6 col-xl-12">
+                                                    <div class="border border-dark shadow-sharp rounded-5 bg-light gsap-fade-in" data-scroll-trigger="true" data-y="25">
+                                                        <div class="border-bottom border-dark px-8 pt-8 pb-4">
+                                                            <ul class="list list-row gap-2">
+                                                                <li>
+                                                                    <span class="d-block w-4 h-4 rounded-circle border border-2x border-dark bg-danger"></span>
+                                                                </li>
+                                                                <li>
+                                                                    <span class="d-block w-4 h-4 rounded-circle border border-2x border-dark bg-warning"></span>
+                                                                </li>
+                                                                <li>
+                                                                    <span class="d-block w-4 h-4 rounded-circle border border-2x border-dark bg-success"></span>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                        <div class="p-8">
+                                                            <h5>GET SOME SOLANA</h5>
+                                                            <p class="mb-0 fs-18 text-heading">  </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6 col-xl-12">
+                                                    <div class="border border-dark shadow-sharp rounded-5 bg-light gsap-fade-in" data-scroll-trigger="true" data-y="24">
+                                                        <div class="border-bottom border-dark px-8 pt-8 pb-4">
+                                                            <ul class="list list-row gap-2">
+                                                                <li>
+                                                                    <span class="d-block w-4 h-4 rounded-circle border border-2x border-dark bg-danger"></span>
+                                                                </li>
+                                                                <li>
+                                                                    <span class="d-block w-4 h-4 rounded-circle border border-2x border-dark bg-warning"></span>
+                                                                </li>
+                                                                <li>
+                                                                    <span class="d-block w-4 h-4 rounded-circle border border-2x border-dark bg-success"></span>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                        <div class="p-8">
+                                                            <h5>GO TO ANY EXHANGE</h5>
+                                                            <p class="mb-0 fs-18 text-heading"> </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-4 d-none d-xl-block">
+                                            <img src="image.png" alt="image" class="img-fluid gsap-fade-in" data-scroll-trigger="true" data-delay="1">
+                                        </div>
+                                        <div class="col-xl-4">
+                                            <div class="row g-4">
+                                                <div class="col-md-6 col-xl-12">
+                                                    <div class="border border-dark shadow-sharp rounded-5 bg-light gsap-fade-in" data-scroll-trigger="true" data-y="28">
+                                                        <div class="border-bottom border-dark px-8 pt-8 pb-4">
+                                                            <ul class="list list-row gap-2">
+                                                                <li>
+                                                                    <span class="d-block w-4 h-4 rounded-circle border border-2x border-dark bg-danger"></span>
+                                                                </li>
+                                                                <li>
+                                                                    <span class="d-block w-4 h-4 rounded-circle border border-2x border-dark bg-warning"></span>
+                                                                </li>
+                                                                <li>
+                                                                    <span class="d-block w-4 h-4 rounded-circle border border-2x border-dark bg-success"></span>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                        <div class="p-8">
+                                                            <h5>BUY GUDTEK</h5>
+                                                            <p class="mb-0 fs-18 text-heading"> </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6 col-xl-12">
+                                                    <div class="border border-dark shadow-sharp rounded-5 bg-light gsap-fade-in" data-scroll-trigger="true" data-y="24">
+                                                        <div class="border-bottom border-dark px-8 pt-8 pb-4">
+                                                            <ul class="list list-row gap-2">
+                                                                <li>
+                                                                    <span class="d-block w-4 h-4 rounded-circle border border-2x border-dark bg-danger"></span>
+                                                                </li>
+                                                                <li>
+                                                                    <span class="d-block w-4 h-4 rounded-circle border border-2x border-dark bg-warning"></span>
+                                                                </li>
+                                                                <li>
+                                                                    <span class="d-block w-4 h-4 rounded-circle border border-2x border-dark bg-success"></span>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                        <div class="p-8">
+                                                            <h5>HOLD</h5>
+                                                            <p class="mb-0 fs-18 text-heading"> </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <img src=" how-to-element-1.png" alt="image" class="img-fluid d-none d-xl-block position-absolute start-50 top-0 translate-middle pointer-none z-n1 gsap-fade-in" data-scroll-trigger="true">
+                                <img src=" hero-element-2.png" alt="image" class="img-fluid d-none d-xl-block position-absolute start-50 bottom-0 translate-middle-x pointer-none z-n1 gsap-fade-in" data-scroll-trigger="true">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- How To Buy Section End -->
+            <!-- Tokenomics  -->
+            <div class="section-space-y">
+                <div class="section-space-md-bottom">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12">
+                                <h2 class="mb-0 text-center text-light text-stroke-md text-shadow-md fs-6vw gsap-text-animation" data-scroll-trigger="true" data-split-type="words"> TOKENOMICS </h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row g-4 align-items-center">
                         <div class="col-lg-6">
-                           <div class="slider__content">
-                              <h6 class="sub-title">About Gudtek</h6>
-                              <h2 class="title">gudtek</h2>
-                              <h3>ai revolution in trading</h3>
-                              <p>GUDTEK is a company that aims to make trading much easier with the help of artificial intellenge , GUDTEK has 3 major and 10 minor products for degens that is used for ease in trading</p>
-                              <div class="slider__btn">
-                                 <a href="https://t.me/Gud_tek_bot" class="btn btn-primary"><span>try now</span></a>
-                              </div>
-                           </div>
-                        </div>
-                        <div class="col-xxl-6 col-xl-5 col-lg-6">
-                           <div class="slider__img text-center">
-                              <img src="slider/slider_img01.png">
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-            <div class="slider__shapes">
-               <img src="slider/slider_shape01.png" alt="shape">
-               <img src="slider/slider_shape02.png" alt="shape">
-               <img src="slider/slider_shape03.png" alt="shape">
-               <img src="slider/slider_shape04.png" alt="shape">
-            </div>
-         </section>
-         <section class="count-area position-relative">
-            <div class="container">
-               <div class="row">
-                  <div class="col-12">
-                     <div class="count-main d-flex justify-content-between">
-                        <div class="count-box text-center">
-                           <span>Scanner</span>
-                           <h2>Done</h2>
-                        </div>
-                        <div class="count-box text-center">
-                           <span>Chatiing</span>
-                           <h2>done</h2>
-                        </div>
-                        <div class="count-box text-center">
-                           <span>Calls</span>
-                           <h2>soon</h2>
-                        </div>
-                        <div class="count-box text-center">
-                           <span>Auto-trade</span>
-                           <h2>soon</h2>
-                        </div>   
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </section>
-         <section class="about-section p-120" id="about">
-            <div class="container">
-               <div class="row align-items-center">
-                  <div class="col-lg-6 col-12">
-                     <div class="about-media text-center">
-                        <img src="about.png" alt="">
-                     </div>
-                  </div> 
-                  <div class="col-12">
-                     <div class="about-info text-center">
-                        <div class="section-title mb-30">
-                            <h2>About <span>gud tek</span></h2>
-                        </div>
-                        <div class="about-des">
-                           <p>Meet Gudtek – your on-chain AI sidekick built for the Solana degens. Just drop any contract address (CA) into Telegram or our web app, and Gudtek instantly scans and decodes it using powerful AI. Whether you’re checking for buy/sell taxes, sniffing out honeypots, verifying LP lock status, or hunting down hidden mint and blacklist functions, Gudtek delivers a clear, real-time summary in plain English — no more code, no more confusion. Say goodbye to getting rugged and hello to informed decisions. Fast, accurate, and reliable, Gudtek is the tool every trader needs in their pocket. Built for degens, by degens — and it’s completely free to try on Telegram or the web. No more guessing. Just facts. Just Gudtek.</p>
-                           <div class="about-btn">
-                              <a class="btn btn-primary" href="https://t.me/Gud_tek_bot"><span>try now</span></a>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </section>
-         <section class="how-to-buy-section" id="where-to-buy">
-            <div class="container">
-               <div class="row">
-                  <div class="col-12">
-                     <div class="section-title mb-30">
-                        <h2>how  <span>to use</span></h2>
-                     </div>
-                  </div>
-               </div>
-               <div class="row align-items-center">
-                  <div class="col-lg-6">
-                     <div class="buy-points">
-                        <ul>
-                           <li>Open the GudTek bot on Telegram.</li>
-<li>Type <strong>/start</strong> to initiate the bot.</li>
-<li>Begin asking the bot anything related to lead generation or outreach automation.</li>
-<li>Send it any contract address (CA), and the bot will instantly reply with key details.</li>
-<li>Use the bot’s quick tools to gather leads, extract business info, or generate custom outreach messages.</li>
-<li>Enjoy real-time responses and smart automation for your freelancing or agency needs.</li>
-                        </ul>
-                        <div class="buy-btns">
-                          
-                        </div>
-                     </div>
-                  </div>
-                  <div class="col-lg-6">
-                     <div class="buy-media text-center">
-                        <img src="buy-token.png" alt="">
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </section>
-         <section class="tokenomics-section p-120" id="tokenomics">
-            <div class="container">
-               <div class="row">
-                  <div class="col-12">
-                     <div class="section-title text-center mb-60">
-                        <h2>Tokenomics</h2>
-                     </div>
-                  </div>
-               </div>
-               <div class="row align-items-center">
-                  <div class="col-lg-6 col-12">
-                     <div class="tokenomics-media">
-                        <img src="tokenomics.png">
-                     </div>
-                  </div>
-                  <div class="col-lg-6 col-12">
-                     <div class="tokenomics-intro">
-                        <div class="tokenomics-item">
-                           <h4><span></span> PumpFun</h4>
-                           <p>Launch on PumpFUn</p>
-                        </div>
-                        <div class="tokenomics-item">
-                           <h4><span></span>5%</h4>
-                           <p>Team </p>
-                        </div>
-                        <div class="tokenomics-item">
-                           <h4><span></span> 90%</h4>
-                           <p>Community</p>
-                        </div>
-                        <div class="tokenomics-item">
-                           <h4><span></span> 5%</h4>
-                           <p>Airdrop</p>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </section>
-         <section class="roadmap-section" id="roadmap">
-            <div class="container">
-               <div class="row">
-                  <div class="col-xl-5 col-lg-6">
-                     <div class="roadmap-left">
-                        <div class="section-title mb-30">
-                           <h2>A LOOK INTO <span>ROADMAPS</span> SEASONS</h2>
-                        </div>
-                        <p class="mb-30">Create the biggest artificial intellegence in the memecoin market</p>
-                        <div class="roadmap-btn">
-                           <a class="btn btn-secondary" href="">Roadmap</a>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="col-xl-7 col-lg-6">
-                     <div class="roadmap-steps-wrap">
-                        <div class="roadmap-steps-item">
-                           <h3>Phase 1: The start</h3>
-                           <p>Telegram Bot + Token Launch</p>
-                           <ul>
-                              <li>Grow The Community On Twitter And Telegram</li>
-                              <li>Get Featured On Top-Tier Crypto Media</li>
-                              <li>Secure A Spot On Coinmarketcap And CoinGecko</li>
-                           </ul>
-                        </div>
-                        <div class="roadmap-steps-item">
-                           <h3>Phase 2: Extension</h3>
-                           <p>Real Time AI Data in The Platforms</p>
-                           <ul>
-                              <li>Integrate With Other Platforms</li>
-                              <li>Real Time Info + Tweets Data</li>
-                           </ul>
-                        </div>
-                        <div class="roadmap-steps-item">
-                           <h3>Phase 3: The Talks</h3>
-                           <p>Talk With AI in Voice Calls</p>
-                           <ul>
-                              <li>Add Voice call feature While Trading</li>
-                              
-                           </ul>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </section>
-         <section class="token-area p-120 pb-0" id="token">
-            <div class="container">
-               <div class="row align-items-center">
-                  <div class="col-lg-6 col-12">
-                     <div class="token-info">
-                        <div class="section-title mb-30">
-                           <h2>$GTK <span>Token</span></h2>
-                        </div>
-                        <p>GudTek Token ($GTK) is the native utility token powering the GudTek ecosystem. $GTK unlocks premium features within the GudTek Bot, including advanced lead scraping, bulk messaging, and priority processing. Holders can stake tokens for exclusive perks, access AI-powered insights, and enjoy reduced fees across the platform. $GTK fuels automation, rewards user engagement, and drives the future of decentralized outreach.</p>
-                        <div class="token-btn">
-                           
-                        </div>
-                     </div>
-                  </div>
-                  <div class="col-lg-5 offset-lg-1 col-12">
-                     <div class="token-media">
-                        <img src="token.png" alt="">
-                     </div>
-                  </div>
-               </div>
-               <div class="row">
-                  <div class="col-12">
-                     <div class="token-supply-main">
-                        <div class="token-supply d-flex justify-content-between">
-                           <div class="supply-box position-relative">
-                              <img src="dollar.png" alt="">
-                              <h3>Total Supply</h3>
-                              <h2>1,000,000,000 <span>(One Billion)</span></h2>
-                           </div>
-                           <div class="supply-box text-end position-relative">
-                              <img src="money.png" alt="">
-                              <h3>Team Holding</h3>
-                              <h2>5,000,000 <span>(Five Million)</span></h2>
-                           </div>
-                           <svg xmlns="http://www.w3.org/2000/svg" width="65" height="5" viewBox="0 0 65 5">
-                              <path d="M968,5630h65l-4,5H972Z" transform="translate(-968 -5630)"></path>
-                           </svg>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </section>
-      </main>
-      <footer class="footer-style-two has-footer-animation" id="contact">
-           <div class="footer__country">
-               <div class="container custom-container">
-                   <div class="row">
-                       <div class="col-6">
-                           <div class="section-title mb-30">
-                               <h2><span>MEME</span></h2>
-                           </div>
-                       </div>
-                       <div class="col-6">
-                           <div class="section-title mb-30 text-center text-sm-end">
-                               <h2><span>Tokens</span></h2>
-                           </div>
-                       </div>
-                   </div>
-               </div>
-           </div>
-           <div class="footer__two-widgets">
-               <div class="container custom-container">
-                   <div class="row">
-                       <div class="col-md-4 col-sm-7 order-1 order-md-0">
-                           <div class="footer-el-widget">
-                               <h4 class="title">About us</h4>
-                               <div class="footer-el-menu">
-                                   <ul class="list-wrap start">
-                                       <li><a href="">Tokenomics</a></li>
-                                       <li><a href="">Roadmap</a></li>
-                                       <li><a href="">SWAP</a></li>
-                                   </ul>
-                               </div>
-                           </div>
-                       </div>
-                       <div class="col-md-4 col-sm-5 order-0 order-md-2">
-                           <div class="footer-el-widget text-start text-md-center widget_nav_menu">
-                               <div class="footer-el-logo mb-30">
-                                   <a href="index.html"><img src="logo.png" alt="Mykd"></a>
-                               </div>
-                               <div class="footer-el-menu">
-                                   <ul class="list-wrap">
-                                       <li><a href="">Home</a></li>
-                                       <li><a href="">About Us</a></li>
+                            <div class="border border-12x border-secondary p-6 p-xl-8 rounded-5 shadow-sharp-md text-center gsap-fade-in" data-scroll-trigger="true" data-y="10">
+                                
+                                <h3 class="text-light text-stroke text-shadow my-6">BUY GUDTEK</h3>
+                                <div class="d-flex justify-content-center justify-content-md-between align-items-center flex-wrap gap-4 mb-6">
+                                    <img src=" token-card-img-1.png" alt="image" class="img-fluid">
+                                    <div class="d-flex flex-column gap-3">
+                                        <span class="d-inline-block h6 m-0 py-3 px-6 bg-secondary-subtle rounded-pill border border-1x border-dark shadow-sharp"> SOON </span>
+                                        <h6 class="mb-0 text-secondary text-stroke text-shadow"> 1 MILLION MC</h6>
+                                    </div>
+                                </div>
+                                <p class="text-light fs-18 text-stroke text-shadow mb-6"> SUPPORT THE AI IN SOLANA CHAIN </p>
+                                <div class="border border-1x shadow-sharp rounded-5 bg-light p-6">
+                                    <span class="d-block text-heading fs-14 fw-bold ff-2 text-start"> WILL MAKE YOU BETTER TRADER</span>
+                                    <div class="custom-input-group d-flex align-items-center border-bottom border-2x border-dark py-1">
                                        
-                                   </ul>
-                               </div>
-                           </div>
-                       </div>
-                       <div class="col-md-4 col-sm-7 order-3">
-                           <div class="footer-el-widget text-start text-md-end">
-                               <h4 class="title">Coming Soon</h4>
-                               <div class="footer-el-menu">
-                                   <ul class="list-wrap end">
-                                       <li><a href="">NFT</a></li>
+                                    </div>
+                                    <span class="d-block text-heading fs-14 fw-bold ff-2 text-start mt-8"> WILL FIGHT THE RUGS WITH YOU </span>
+                                    <div class="custom-input-group d-flex align-items-center border-bottom border-2x border-dark py-1">
+                                        
+                                        
+                                    </div>
+                                </div>
+                                <div class="my-6">
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <span class="d-block h6 m-0 text-light text-stroke text-shadow"> Products delivered </span>
+                                        <span class="d-block h6 m-0 text-light text-stroke text-shadow"> 3 </span>
+                                    </div>
+                                    <div class="progress mt-3">
+                                        <div class="progress-bar bg-danger" style="width: 100%"></div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="row g-4">
+                                <div class="col-md-6">
+                                    <div class="p-8 bg-light border border-1x border-dark shadow-sharp text-center rounded h-100 gsap-fade-in" data-scroll-trigger="true" data-y="10">
+                                        <h2 class="text-danger text-stroke text-shadow">1B</h2>
+                                        <p class="mb-0 text-heading fs-18">TOKEN SUPPLY</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="p-8 bg-light border border-1x border-dark shadow-sharp text-center rounded h-100 gsap-fade-in" data-scroll-trigger="true" data-y="10" data-delay="0.25">
+                                        <h2 class="text-secondary text-stroke text-shadow">3%</h2>
+                                        <p class="mb-0 text-heading fs-18">DEV LOCKED</p>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="d-flex align-items-center p-3 rounded bg-light border border-1x border-dark shadow-sharp gsap-fade-in" data-scroll-trigger="true" data-y="10">
+                                        <input type="text" class="form-control border-0 text-dark" value="B7xavrAozTa1msQxu8YAcvPftf76x1fJYyLrYdTnbrah">
+                                        <button type="button" class="btn btn-icon btn-secondary">
+                                            <iconify-icon icon="iconamoon:copy-light"></iconify-icon>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <img src="image.png" alt="image" class="img-fluid gsap-fade-in" data-scroll-trigger="true" data-y="10">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Tokenomics End -->
+            <!-- Cross Ticker  -->
+            <div class="section-space-sm-y position-relative w-100 text-center overflow-hidden">
+                <div class="ticker-2 py-4 bg-secondary border-top border-bottom border-2x border-dark">
+                    <div class="container-fluid p-0">
+                        <div class="row g-0">
+                            <div class="col-12">
+                                <div class="scroller-x" data-speed="slow" data-direction="right">
+                                    <ul class="list list-row align-items-center gap-4 scroller-x__list">
+                                        <li>
+                                            <img src="  icon-coin-3.png" alt="image" class="img-fluid">
+                                        </li>
+                                        <li>
+                                            <h4 class="mb-0 text-dark">CREATIVE MEME WEBSITE</h4>
+                                        </li>
+                                        <li>
+                                            <img src="  icon-coin-3.png" alt="image" class="img-fluid">
+                                        </li>
+                                        <li>
+                                            <h4 class="mb-0 text-primary text-stroke text-shadow"> LATEST MEMES AND TRENDS </h4>
+                                        </li>
+                                        <li>
+                                            <img src="  icon-coin-3.png" alt="image" class="img-fluid">
+                                        </li>
+                                        <li>
+                                            <h4 class="mb-0 text-dark">CREATIVE MEME WEBSITE</h4>
+                                        </li>
+                                        <li>
+                                            <img src="  icon-coin-3.png" alt="image" class="img-fluid">
+                                        </li>
+                                        <li>
+                                            <h4 class="mb-0 text-primary text-stroke text-shadow"> LATEST MEMES AND TRENDS </h4>
+                                        </li>
+                                        <li>
+                                            <img src="  icon-coin-3.png" alt="image" class="img-fluid">
+                                        </li>
+                                        <li>
+                                            <h4 class="mb-0 text-dark">CREATIVE MEME WEBSITE</h4>
+                                        </li>
+                                        <li>
+                                            <img src="  icon-coin-3.png" alt="image" class="img-fluid">
+                                        </li>
+                                        <li>
+                                            <h4 class="mb-0 text-primary text-stroke text-shadow"> LATEST MEMES AND TRENDS </h4>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ticker-3 py-4 bg-dark border-top border-bottom border-2x border-dark">
+                    <div class="container-fluid p-0">
+                        <div class="row g-0">
+                            <div class="col-12">
+                                <div class="scroller-x" data-speed="slow" data-direction="left">
+                                    <ul class="list list-row align-items-center gap-4 scroller-x__list">
+                                        <li>
+                                            <img src="  icon-coin-4.png" alt="image" class="img-fluid">
+                                        </li>
+                                        <li>
+                                            <h4 class="mb-0 text-light">AI AGENT</h4>
+                                        </li>
+                                        <li>
+                                            <img src="  icon-coin-4.png" alt="image" class="img-fluid">
+                                        </li>
+                                        <li>
+                                            <h4 class="mb-0 text-primary text-stroke text-shadow"> TRADING</h4>
+                                        </li>
+                                        <li>
+                                            <img src="  icon-coin-4.png" alt="image" class="img-fluid">
+                                        </li>
+                                        <li>
+                                            <h4 class="mb-0 text-light">CHATTING</h4>
+                                        </li>
+                                        <li>
+                                            <img src="  icon-coin-4.png" alt="image" class="img-fluid">
+                                        </li>
+                                        <li>
+                                            <h4 class="mb-0 text-primary text-stroke text-shadow"> INSIDER </h4>
+                                        </li>
+                                        <li>
+                                            <img src="  icon-coin-4.png" alt="image" class="img-fluid">
+                                        </li>
+                                        <li>
+                                            <h4 class="mb-0 text-light text-stroke text-shadow"> AI BUDDY </h4>
+                                        </li>
+                                        <li>
+                                            <img src="  icon-coin-4.png" alt="image" class="img-fluid">
+                                        </li>
+                                        <li>
+                                            <h4 class="mb-0 text-primary text-stroke text-shadow"> TRADING </h4>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Cross Ticker End -->
+            <!-- Road Map -->
+            <div class="section-space-y position-relative">
+                <div class="section-space-md-bottom">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12">
+                                <h2 class="mb-0 text-center text-light text-stroke-md text-shadow-md fs-6vw gsap-text-animation" data-split-type="words" data-scroll-trigger="true"> ROAD MAP </h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="road-map-section-1">
+                    <div class="container">
+                        <div class="row g-4">
+                            <div class="col-md-6 col-lg-5 col-xl-4 position-relative z-1">
+                                <div class="road-map-section-1__label road-map-section-1__label--odd d-flex align-items-center gap-4 mb-4 mb-lg-0">
+                                    <div class="w-8 h-8 rounded-circle border border-dark shadow-sharp bg-light flex-shrink-0"></div>
+                                    <h4 class="mb-0 text-light text-stroke text-shadow flex-grow-1"> Phase #01 </h4>
+                                </div>
+                                <div class="border border-dark shadow-sharp rounded-5 bg-light gsap-fade-in" data-scroll-trigger="true" data-y="10">
+                                    <div class="border-bottom border-dark px-8 pt-8 pb-4">
+                                        <ul class="list list-row gap-2">
+                                            <li>
+                                                <span class="d-block w-4 h-4 rounded-circle border border-2x border-dark bg-danger"></span>
+                                            </li>
+                                            <li>
+                                                <span class="d-block w-4 h-4 rounded-circle border border-2x border-dark bg-warning"></span>
+                                            </li>
+                                            <li>
+                                                <span class="d-block w-4 h-4 rounded-circle border border-2x border-dark bg-success"></span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="p-8">
+                                        <h5>GUDTEK SCANNER</h5>
+                                        <ul class="list gap-4">
+                                            <li class="d-flex gap-3">
+                                                <span class="w-6 h-6 d-flex justify-content-center align-items-center rounded-circle border border-dark shadow-sharp-xs bg-light text-dark flex-shrink-0">
+                                                    <iconify-icon icon="ri:check-fill"></iconify-icon>
+                                                </span>
+                                                <span class="d-block fs-18 text-dark"> Platform Launch </span>
+                                            </li>
+                                            <li class="d-flex gap-3">
+                                                <span class="w-6 h-6 d-flex justify-content-center align-items-center rounded-circle border border-dark shadow-sharp-xs bg-light text-dark flex-shrink-0">
+                                                    <iconify-icon icon="ri:check-fill"></iconify-icon>
+                                                </span>
+                                                <span class="d-block fs-18 text-dark"> Community Building </span>
+                                            </li>
+                                            
+                                            <li class="d-flex gap-3">
+                                                <span class="w-6 h-6 d-flex justify-content-center align-items-center rounded-circle border border-dark shadow-sharp-xs bg-light text-dark flex-shrink-0">
+                                                    <iconify-icon icon="ri:check-fill"></iconify-icon>
+                                                </span>
+                                                <span class="d-block fs-18 text-dark"> Community Incentives Program </span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-none d-lg-block w-100 m-0"></div>
+                            <div class="col-md-6 col-lg-5 col-xl-4 position-relative z-1 ms-lg-auto">
+                                <div class="road-map-section-1__label road-map-section-1__label--even d-flex align-items-center gap-4 mb-4 mb-lg-0">
+                                    <div class="w-8 h-8 rounded-circle border border-dark shadow-sharp bg-light d-lg-none"></div>
+                                    <h4 class="mb-0 text-light text-stroke text-shadow">Phase #02</h4>
+                                    <div class="w-8 h-8 rounded-circle border border-dark shadow-sharp bg-light d-none d-lg-block"></div>
+                                </div>
+                                <div class="border border-dark shadow-sharp rounded-5 bg-light gsap-fade-in" data-scroll-trigger="true" data-y="10">
+                                    <div class="border-bottom border-dark px-8 pt-8 pb-4">
+                                        <ul class="list list-row gap-2">
+                                            <li>
+                                                <span class="d-block w-4 h-4 rounded-circle border border-2x border-dark bg-danger"></span>
+                                            </li>
+                                            <li>
+                                                <span class="d-block w-4 h-4 rounded-circle border border-2x border-dark bg-warning"></span>
+                                            </li>
+                                            <li>
+                                                <span class="d-block w-4 h-4 rounded-circle border border-2x border-dark bg-success"></span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="p-8">
+                                        <h5>GROWTH TO THE MOON</h5>
+                                        <ul class="list gap-4">
+                                            <li class="d-flex gap-3">
+                                                <span class="w-6 h-6 d-flex justify-content-center align-items-center rounded-circle border border-dark shadow-sharp-xs bg-light text-dark flex-shrink-0">
+                                                    <iconify-icon icon="ri:check-fill"></iconify-icon>
+                                                </span>
+                                                <span class="d-block fs-18 text-dark"> Launch of other products </span>
+                                            </li>
+                                            <li class="d-flex gap-3">
+                                                <span class="w-6 h-6 d-flex justify-content-center align-items-center rounded-circle border border-dark shadow-sharp-xs bg-light text-dark flex-shrink-0">
+                                                    <iconify-icon icon="ri:check-fill"></iconify-icon>
+                                                </span>
+                                                <span class="d-block fs-18 text-dark"> Holder based utility</span>
+                                            </li>
+                                            <li class="d-flex gap-3">
+                                                <span class="w-6 h-6 d-flex justify-content-center align-items-center rounded-circle border border-dark shadow-sharp-xs bg-light text-dark flex-shrink-0">
+                                                    <iconify-icon icon="ri:check-fill"></iconify-icon>
+                                                </span>
+                                                <span class="d-block fs-18 text-dark"> Marketing</span>
+                                            </li>
+                                            <li class="d-flex gap-3">
+                                                <span class="w-6 h-6 d-flex justify-content-center align-items-center rounded-circle border border-dark shadow-sharp-xs bg-light text-dark flex-shrink-0">
+                                                    <iconify-icon icon="ri:check-fill"></iconify-icon>
+                                                </span>
+                                                <span class="d-block fs-18 text-dark"> 100 Million mc</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-none d-lg-block w-100 m-0"></div>
+                            <div class="col-md-6 col-lg-5 col-xl-4 position-relative z-1">
+                                <div class="road-map-section-1__label road-map-section-1__label--odd d-flex align-items-center gap-4 mb-4 mb-lg-0">
+                                    <div class="w-8 h-8 rounded-circle border border-dark shadow-sharp bg-light"></div>
+                                    <h4 class="mb-0 text-light text-stroke text-shadow">Phase #03</h4>
+                                </div>
+                                <div class="border border-dark shadow-sharp rounded-5 bg-light gsap-fade-in" data-scroll-trigger="true" data-y="10">
+                                    <div class="border-bottom border-dark px-8 pt-8 pb-4">
+                                        <ul class="list list-row gap-2">
+                                            <li>
+                                                <span class="d-block w-4 h-4 rounded-circle border border-2x border-dark bg-danger"></span>
+                                            </li>
+                                            <li>
+                                                <span class="d-block w-4 h-4 rounded-circle border border-2x border-dark bg-warning"></span>
+                                            </li>
+                                            <li>
+                                                <span class="d-block w-4 h-4 rounded-circle border border-2x border-dark bg-success"></span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="p-8">
+                                        <h5>PARTNERSHIPS</h5>
+                                        <ul class="list gap-4">
+                                            <li class="d-flex gap-3">
+                                                <span class="w-6 h-6 d-flex justify-content-center align-items-center rounded-circle border border-dark shadow-sharp-xs bg-light text-dark flex-shrink-0">
+                                                    <iconify-icon icon="ri:check-fill"></iconify-icon>
+                                                </span>
+                                                <span class="d-block fs-18 text-dark"> Partner with solana</span>
+                                            </li>
+                                            <li class="d-flex gap-3">
+                                                <span class="w-6 h-6 d-flex justify-content-center align-items-center rounded-circle border border-dark shadow-sharp-xs bg-light text-dark flex-shrink-0">
+                                                    <iconify-icon icon="ri:check-fill"></iconify-icon>
+                                                </span>
+                                                <span class="d-block fs-18 text-dark"> Partner with pumpfun </span>
+                                            </li>
+                                            <li class="d-flex gap-3">
+                                                <span class="w-6 h-6 d-flex justify-content-center align-items-center rounded-circle border border-dark shadow-sharp-xs bg-light text-dark flex-shrink-0">
+                                                    <iconify-icon icon="ri:check-fill"></iconify-icon>
+                                                </span>
+                                                <span class="d-block fs-18 text-dark"> Partner with Jupiter </span>
+                                            </li>
+                                            <li class="d-flex gap-3">
+                                                <span class="w-6 h-6 d-flex justify-content-center align-items-center rounded-circle border border-dark shadow-sharp-xs bg-light text-dark flex-shrink-0">
+                                                    <iconify-icon icon="ri:check-fill"></iconify-icon>
+                                                </span>
+                                                <span class="d-block fs-18 text-dark"> Partner with other firms</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-none d-lg-block w-100 m-0"></div>
+                            <div class="col-md-6 col-lg-5 col-xl-4 position-relative z-1 ms-lg-auto">
+                                <div class="road-map-section-1__label road-map-section-1__label--even d-flex align-items-center gap-4 mb-4 mb-lg-0">
+                                    <div class="w-8 h-8 rounded-circle border border-dark shadow-sharp bg-light d-lg-none"></div>
+                                    <h4 class="mb-0 text-light text-stroke text-shadow">Phase #04</h4>
+                                    <div class="w-8 h-8 rounded-circle border border-dark shadow-sharp bg-light d-lg-block d-none"></div>
+                                </div>
+                                <div class="border border-dark shadow-sharp rounded-5 bg-light gsap-fade-in" data-scroll-trigger="true" data-y="10">
+                                    <div class="border-bottom border-dark px-8 pt-8 pb-4">
+                                        <ul class="list list-row gap-2">
+                                            <li>
+                                                <span class="d-block w-4 h-4 rounded-circle border border-2x border-dark bg-danger"></span>
+                                            </li>
+                                            <li>
+                                                <span class="d-block w-4 h-4 rounded-circle border border-2x border-dark bg-warning"></span>
+                                            </li>
+                                            <li>
+                                                <span class="d-block w-4 h-4 rounded-circle border border-2x border-dark bg-success"></span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="p-8">
+                                        <h5>FULL AI ON CHAIN</h5>
+                                        <ul class="list gap-4">
+                                            <li class="d-flex gap-3">
+                                                <span class="w-6 h-6 d-flex justify-content-center align-items-center rounded-circle border border-dark shadow-sharp-xs bg-light text-dark flex-shrink-0">
+                                                    <iconify-icon icon="ri:check-fill"></iconify-icon>
+                                                </span>
+                                                <span class="d-block fs-18 text-dark"> Create full chain on AI </span>
+                                            </li>
+                                            <li class="d-flex gap-3">
+                                                <span class="w-6 h-6 d-flex justify-content-center align-items-center rounded-circle border border-dark shadow-sharp-xs bg-light text-dark flex-shrink-0">
+                                                    <iconify-icon icon="ri:check-fill"></iconify-icon>
+                                                </span>
+                                                <span class="d-block fs-18 text-dark"> Create agents that work on scanning </span>
+                                            </li>
+                                            <li class="d-flex gap-3">
+                                                <span class="w-6 h-6 d-flex justify-content-center align-items-center rounded-circle border border-dark shadow-sharp-xs bg-light text-dark flex-shrink-0">
+                                                    <iconify-icon icon="ri:check-fill"></iconify-icon>
+                                                </span>
+                                                <span class="d-block fs-18 text-dark"> Create trading agents</span>
+                                            </li>
+                                            
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <img src=" road-map-element-1.png" alt="image" class="img-fluid road-map-section-1__element road-map-section-1__element--1">
+                    <img src=" road-map-element-2.png" alt="image" class="img-fluid road-map-section-1__element road-map-section-1__element--2">
+                    <img src=" road-map-element-3.png" alt="image" class="img-fluid road-map-section-1__element road-map-section-1__element--3">
+                    <img src=" road-map-element-4.png" alt="image" class="img-fluid road-map-section-1__element road-map-section-1__element--4">
+                    <img src=" road-map-element-5.png" alt="image" class="img-fluid road-map-section-1__element road-map-section-1__element--5">
+                    <img src=" road-map-element-6.png" alt="image" class="img-fluid road-map-section-1__element road-map-section-1__element--6">
+                    <img src=" road-map-element-7.png" alt="image" class="img-fluid road-map-section-1__element road-map-section-1__element--7">
+                </div>
+                <img src=" cloud-sky.png" alt="image" class="img-fluid w-100 blend-y-start-15 position-absolute start-50 top-0 translate-middle z-n2 pointer-none gsap-fade-in" data-scroll-trigger="true">
+            </div>
+            <!-- Road Map End -->
+            <!-- FAQ -->
+            <div class="faq-section-1 section-space-y bg-secondary">
+                <div class="section-space-md-bottom">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12">
+                                <h2 class="mb-0 text-center text-light text-stroke-md text-shadow-md fs-6vw gsap-text-animation" data-split-type="words" data-scroll-trigger="true"> FAQ </h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row g-4">
+                        <div class="col-lg-6">
+                            <div class="accordion accordion-connected accordion-separate" id="faqOne">
+                                <div class="accordion-item shadow-sharp-md">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqOneA" aria-expanded="true" aria-controls="faqOneA">
+                                            <span class="accordion-button__title"> What is Gudtek and how does it work? </span>
+                                        </button>
+                                    </h2>
+                                    <div id="faqOneA" class="accordion-collapse collapse" data-bs-parent="#faqOne">
+                                        <div class="accordion-body">Gudtek is ai revolution on chain which helps users to trade safely without without gettig into rugs</div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item shadow-sharp-md">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqOneB" aria-expanded="false" aria-controls="faqOneB">
+                                            <span class="accordion-button__title"> Why trust GudTek </span>
+                                        </button>
+                                    </h2>
+                                    <div id="faqOneB" class="accordion-collapse collapse" data-bs-parent="#faqOne">
+                                        <div class="accordion-body"> Cause we belive in creating in space where no one loose money and everyone makes tonn of money </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="accordion accordion-connected accordion-separate" id="faqTwo">
+                                <div class="accordion-item shadow-sharp-md">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqTwoA" aria-expanded="true" aria-controls="faqTwoA">
+                                            <span class="accordion-button__title"> Who are in team of GudTek</span>
+                                        </button>
+                                    </h2>
+                                    <div id="faqTwoA" class="accordion-collapse collapse" data-bs-parent="#faqTwo">
+                                        <div class="accordion-body"> There are 3 devs and 10 Marketing people in gudtek </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item shadow-sharp-md">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqTwoB" aria-expanded="false" aria-controls="faqTwoB">
+                                            <span class="accordion-button__title"> How do I Support Gudtek</span>
+                                        </button>
+                                    </h2>
+                                    <div id="faqTwoB" class="accordion-collapse collapse" data-bs-parent="#faqTwo">
+                                        <div class="accordion-body"> Just buy the gudtek and help us grow with creating new community </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <img src=" faq-element-1.png" alt="image" class="img-fluid faq-section-1__element faq-section-1__element--1 gsap-fade-in" data-scroll-trigger="true" data-y="15">
+                <img src=" faq-element-2.png" alt="image" class="img-fluid faq-section-1__element faq-section-1__element--2 gsap-fade-in" data-scroll-trigger="true" data-y="15">
+            </div>
+            <!-- FAQ End -->
+            <!-- Footer -->
+            <div class="section-space-top section-space-sm-bottom position-relative z-1">
+                <div class="section-space-md-bottom">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-10">
+                                <div class="cta-1 section-space-y text-center gsap-zoom" data-scroll-trigger="true" data-scale="0.8" data-scrub="true">
+                                    <h2 class="text-secondary text-stroke text-shadow fs-6vw"> JOIN US </h2>
+                                    <div class="d-flex align-items-center p-3 rounded bg-light border border-1x border-dark shadow-sharp max-text-14 mx-auto">
+                                        
+                                      
+                                    </div>
+                                    <ul class="list list-row gap-4 justify-content-center mt-8 flex-wrap">
+                                        
+                                        <li>
+                                            <a href="https://x.com/Gud_tek_" class="btn btn-icon btn-light hover:bg-secondary rounded-circle">
+                                                <iconify-icon icon="ri:twitter-x-fill"></iconify-icon>
+                                            </a>
                                        
-                                   </ul>
-                               </div>
-                           </div>
-                       </div>
-                   </div>
-               </div>
-           </div>
-           <div class="copyright__wrap -style-two">
-               <div class="container custom-container">
-                   <div class="row align-items-center">
-                       <div class="col-lg-6">
-                           <div class="copyright__text text-center text-lg-start">
-                               <p>Copyright @ 2025 - All Rights Reserved By <span>GUDTEK</span></p>
-                           </div>
-                       </div>
-                       <div class="col-lg-6">
-                           <div class="copyright__menu">
-                               <ul class="list-wrap d-flex flex-wrap justify-content-center justify-content-lg-end">
-                                   <li><a href="">Contact Us</a></li>
-                                   <li><a href="">Join our team</a></li>
-                                   <li><a href="">Privacy Policy</a></li>
-                               </ul>
-                           </div>
-                       </div>
-                   </div>
-               </div>
-           </div>
-       </footer>
-       <div id="to-top"><i class="fas fa-arrow-up fa-fw"></i></div>
-      <script src="jquery-3.6.0.min.js"></script>
-      <script src="bootstrap.bundle.min.js"></script>
-      <script src="custom.js"></script>
-   </body>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="border border-dark shadow-sharp rounded-4 p-8 bg-light position-relative z-1">
+                                <div class="row g-4 justify-content-center align-items-center">
+                                    <div class="col-lg-5">
+                                        <p class="mb-0 ff-2 text-dark text-center text-lg-start"> &copy; GUDTEK 2025. All rights reserved. </p>
+                                    </div>
+                                    <div class="col-lg-7">
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <img src=" footer-cloud-1.png" alt="image" class="img-fluid w-100 position-absolute start-0 end-0 bottom-0 pointer-none">
+            </div>
+            <!-- Footer End -->
+        </div>
+    </div>
+    <!-- Scripts -->
+    <script src="bootstrap.bundle.js"></script>
+    <script src="iconify.js"></script>
+    <script src="simplebar.js"></script>
+    <script src="gsap.min.js"></script>
+    <script src="ScrollSmoother.min.js"></script>
+    <script src="ScrollTrigger.min.js"></script>
+    <script src="SplitText.min.js"></script>
+    <script src="Flip.min.js"></script>
+    <script src="app.js"></script>
+</body>
+
 </html>

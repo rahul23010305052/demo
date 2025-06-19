@@ -1,886 +1,375 @@
 <!DOCTYPE html>
-<html lang="en" data-bs-theme="light">
-
+<html class="no-js" lang="en">
 <head>
+
+    <!--- basic page needs
+    ================================================== -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Memeworld: A feature-rich HTML template for memecoin, crypto, and ICO projects. Modern design, responsive layout, and ready for Crypto Project">
-    <meta name="keywords" content="memecoin, crypto, ico, html template, themeforest, meme coin, cryptocurrency, blockchain, token, landing page, web3, nft, decentralized, finance, investment">
-    <meta name="author" content="bplugins">
-    <title>GUDTEK</title>
-    <link rel="icon" href="favicon.png" type="image/png">
-    <link rel="stylesheet" href="bootstrap.css">
-    <link rel="stylesheet" href="bootstrap-icons.css">
-    <link rel="stylesheet" href="simplebar.css">
-    <link rel="stylesheet" href="swiper-bundle.css">
-    <link rel="stylesheet" href="ff-1.css">
-    <link rel="stylesheet" href="ff-2.css">
-    <link rel="stylesheet" href="style.css">
+    <title>Gud tek</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- mobile specific metas
+    ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSS
+    ================================================== -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/vendor.css">
+
+    <!-- script
+    ================================================== -->
+    <script src="js/modernizr.js"></script>
+    <script defer src="js/fontawesome/all.min.js"></script>
+
+    <!-- favicons
+    ================================================== -->
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
+
 </head>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=smart_toy" />
-<body class="bg-primary overflow-x-hidden">
-    <!-- Preloader -->
-    <div class="preloader">
-        <div class="pl">
-            <div class="pl__coin">
-                <div class="pl__coin-flare"></div>
-                <div class="pl__coin-flare"></div>
-                <div class="pl__coin-flare"></div>
-                <div class="pl__coin-flare"></div>
-                <div class="pl__coin-layers">
-                    <div class="pl__coin-layer">
-                        <div class="pl__coin-inscription"></div>
-                    </div>
-                    <div class="pl__coin-layer"></div>
-                    <div class="pl__coin-layer"></div>
-                    <div class="pl__coin-layer"></div>
-                    <div class="pl__coin-layer">
-                        <div class="pl__coin-inscription"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="pl__shadow"></div>
+
+<body id="top">
+
+
+    <!-- preloader
+    ================================================== -->
+    <div id="preloader">
+        <div id="loader" class="dots-fade">
+            <div></div>
+            <div></div>
+            <div></div>
         </div>
     </div>
-    <!-- Preloader End -->
-    <!-- Navbar  -->
-    <nav class="navbar navbar-expand-lg primary-header primary-header--transparent-light-alt primary-header--fixed top-0 primary-header-crossed:full-dark">
-        <div class="container align-items-lg-center">
-            <!-- Logo -->
-            <a class="logo" href="index.html">
-                <h4 style="color:white">GUDTEK</h4>
+
+
+    <!-- header
+    ================================================== -->
+    <header class="s-header">
+
+        <div class="s-header__logo">
+            <a href="index.html">
+                <img src="logo.png" alt="Homepage">
             </a>
-            <!-- Logo End-->
-            <!-- Mobile Menu Toggler -->
-            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbar0" aria-controls="navbar0" aria-expanded="false" aria-label="Toggle navigation">
-                <iconify-icon icon="solar:hamburger-menu-line-duotone"></iconify-icon>
-            </button>
-            <!-- Mobile Menu Toggler End-->
-            <!-- Menu -->
-            <div class="collapse navbar-collapse" id="navbar0">
+        </div>
+
+        <div class="s-header__content">
+    
+            <nav class="s-header__nav-wrap">
+                <ul class="s-header__nav">
+                    <li><a class="smoothscroll" href="#hero" title="Intro">Home</a></li>
+                    <li><a class="smoothscroll" href="#about" title="About">About</a></li>
+                    <li><a class="smoothscroll" href="#services" title="Services">Tokennomics</a></li>
+                    <li><a class="smoothscroll" href="#portfolio" title="Works">Roadmap</a></li>
+                </ul>
+            </nav> <!-- end s-header__nav-wrap -->
+
+            <a href="https://t.me/gud_tek_bot" class="btn btn--primary btn--small">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M24 0l-6 22-8.129-7.239 7.802-8.234-10.458 7.227-7.215-1.754 24-12zm-15 16.668v7.332l3.258-4.431-3.258-2.901z"/></svg>
+                Try now
+            </a>
+
+        </div> <!-- end header-content -->
+
+        <a class="s-header__menu-toggle" href="#0"><span>Menu</span></a>
+
+    </header> <!-- end s-header -->
+
+
+    <!-- hero
+    ================================================== -->
+    <section id="hero" class="s-hero target-section">
+
+        <div class="s-hero__bg">
+            <div class="gradient-overlay"></div>
+        </div>
+
+        <div class="row s-hero__content">
+            <div class="column">
+
+                <h1>Trader</h1>
+                <div class="s-hero__content-about">
+
+                    <p>
+                    We are Gud Tek , <br>
+                    We build AI Buddies for <br>
+                    Memecoin market 
+                    </p>
+    
+                    <footer>
+                        <div class="s-hero__content-social">
+                           
+                            <a href="https://x.com/Gud_tek_"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+                            
+                        </div>
+                    </footer>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="s-hero__video">
+            
                 
-                <div class="d-flex align-items-center gap-3 ms-lg-auto">
-                    <a href="https://x.com/Gud_tek_" class="btn btn-light fw-bold text-heading "> FOLLOW </a>
-                </div>
-            </div>
-            <!-- Menu End -->
+                <span class="s-hero__video-text">
+                    <img src="logo.png" alt="">
+                </span>
+            </a>
         </div>
-    </nav>
-    <!-- Navbar End -->
-    <div id="smooth-wrapper">
-        <div id="smooth-content">
-            <!-- Hero -->
-            <section class="hero-1 section-space-top">
-                <div class="container">
-                    <div class="row justify-content-center">
-                        <div class="col-lg-10 col-xl-9 text-center">
-                            <span class="d-inline-block mb-4 text-secondary fs-24 text-stroke gsap-text-animation" data-split-type="words" data-delay="0.5"> AI REVOLUTION IN MEMECOINS</span>
-                            <h1 class="hero-1__title mb-10 text-light text-stroke-md text-shadow-md gsap-text-animation" data-split-type="chars" data-delay="0.75"> GUDTEK </h1>
-                            <div class="d-flex justify-content-center align-items-center flex-wrap gap-4">
-                                <a href="https://x.com/Gud_tek_" class="btn btn-lg btn-secondary text-heading align-items-center rounded gsap-fade-in" data-delay="1" data-y="50%">
-                                    <iconify-icon icon="mingcute:binance-coin-sol-fill"></iconify-icon>
-                                    <span class="d-inline-block ff-1">Twitter</span>
-                                </a>
-                                <a href="https://t.me/Gud_tek_bot" class="btn btn-lg btn-light text-heading align-items-center rounded rounded gsap-fade-in" data-delay="1.15" data-y="50%">
-                                    <iconify-icon icon="mingcute:binance-coin-bn-fill"></iconify-icon>
-                                    <span class="d-inline-block ff-1">Try Now</span>
-                                </a>
-                            </div>
-                            <img src="image.png" alt="image" class="img-fluid mt-10 gsap-fade-in" data-delay="1.25">
-                        </div>
-                    </div>
-                </div>
-                <img src=" hero-bg-1.png" alt="image" class="img-fluid w-100 position-absolute start-0 bottom-0 z-n1 pointer-none gsap-fade-in" data-delay="3.5">
-                <img src=" hero-cloud-1.png" alt="image" class="img-fluid w-100 position-absolute start-50 bottom-0 translate-middle-x z-n1 gsap-fade-in" data-delay="1.5">
-                <img src=" hero-element-1.png" alt="image" class="img-fluid hero-1__element hero-1__element--1 gsap-fade-in" data-delay="3.1">
-                <img src=" hero-element-2.png" alt="image" class="img-fluid hero-1__element hero-1__element--2 gsap-fade-in" data-delay="2.75">
-                <img src=" hero-element-3.png" alt="image" class="img-fluid hero-1__element hero-1__element--3 gsap-fade-in" data-delay="3.2">
-                <img src=" hero-element-4.png" alt="image" class="img-fluid hero-1__element hero-1__element--4 gsap-fade-in" data-delay="2.5">
-                <img src=" hero-element-5.png" alt="image" class="img-fluid hero-1__element hero-1__element--5 gsap-fade-in" data-delay="3.3">
-                <img src=" hero-element-6.png" alt="image" class="img-fluid hero-1__element hero-1__element--6 gsap-fade-in" data-delay="3">
-                <img src=" hero-element-7.png" alt="image" class="img-fluid hero-1__element hero-1__element--7 gsap-fade-in" data-delay="3.4">
-                <img src=" hero-element-8.png" alt="image" class="img-fluid hero-1__element hero-1__element--8 gsap-fade-in" data-delay="1.75" data-y="100">
-                <img src=" hero-element-9.png" alt="image" class="img-fluid hero-1__element hero-1__element--9 gsap-fade-in" data-delay="1.75" data-y="100">
-                <img src=" hero-element-10.png" alt="image" class="img-fluid hero-1__element hero-1__element--10 gsap-fade-in" data-delay="1.75" data-y="100">
-                <img src=" hero-element-11.png" alt="image" class="img-fluid hero-1__element hero-1__element--11 gsap-fade-in" data-delay="1.75" data-y="100">
-                <img src=" hero-element-12.png" alt="image" class="img-fluid hero-1__element hero-1__element--12 gsap-fade-in" data-delay="1.75" data-y="100">
-                <img src=" hero-element-13.png" alt="image" class="img-fluid hero-1__element hero-1__element--13 gsap-fade-in" data-delay="1.75" data-y="100">
-            </section>
-            <!-- Hero End -->
-            <!-- Ticker -->
-            <div class="ticker-1 py-4 bg-light border-top border-bottom border-2x border-dark gsap-fade-in" data-delay="3.5">
-                <div class="container-fluid p-0">
-                    <div class="row g-0">
-                        <div class="col-12">
-                            <div class="scroller-x" data-speed="slow" data-direction="right">
-                                <ul class="list list-row align-items-center gap-4 scroller-x__list">
-                                    <li>
-                                        <span class="material-symbols-outlined">
-                                            smart_toy
-                                            </span>
-                                    </li>
-                                    <li>
-                                        <h4 class="mb-0 text-secondary text-stroke text-shadow"> AI AGENT </h4>
-                                    </li>
-                                    <li>
-                                        <span class="material-symbols-outlined">
-                                            smart_toy
-                                            </span>
-                                    </li>
-                                    <li>
-                                        <h4 class="mb-0 text-primary text-stroke text-shadow"> SCANNER </h4>
-                                    </li>
-                                    <li>
-                                        <span class="material-symbols-outlined">
-                                            smart_toy
-                                            </span>
-                                    </li>
-                                    <li>
-                                        <h4 class="mb-0 text-secondary text-stroke text-shadow"> CHATTING</h4>
-                                    </li>
-                                    <li>
-                                        <span class="material-symbols-outlined">
-                                            smart_toy
-                                            </span>
-                                    </li>
-                                    <li>
-                                        <h4 class="mb-0 text-primary text-stroke text-shadow"> TRADING </h4>
-                                    </li>
-                                    <li>
-                                        <span class="material-symbols-outlined">
-                                            smart_toy
-                                            </span>
-                                    </li>
-                                    <li>
-                                        <h4 class="mb-0 text-secondary text-stroke text-shadow"> INSIDER </h4>
-                                    </li>
-                                    <li>
-                                        <span class="material-symbols-outlined">
-                                            smart_toy
-                                            </span>
-                                    </li>
-                                    <li>
-                                        <h4 class="mb-0 text-primary text-stroke text-shadow"> AI BUDDY </h4>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Ticker End -->
-            <!-- About Section -->
-            <div class="section-space-y overflow-hidden">
-                <div class="container">
-                    <div class="row g-4 align-items-center">
-                        <div class="col-md-5">
-                            <div class="position-relative z-1 gsap-fade-in" data-scroll-trigger="true" data-delay="0.5">
-                                <img src="image copy.png" alt="image" class="img-fluid">
-                                
-                                <img src=" about-element-4.png" alt="image" class="img-fluid position-absolute start-0 top-0 translate-middle pointer-none z-n1">
-                            </div>
-                        </div>
-                        <div class="col-md-7">
-                            <div class="position-relative bg-secondary px-6 py-8 px-xl-10 py-xl-12 px-xxl-15 py-xxl-18 rounded-5 border border-2x border-dark shadow-sharp-md z-1 gsap-fade-in" data-scroll-trigger="true" data-delay="0.75">
-                                <h2 class="text-light text-stroke text-shadow">ABOUT GUDTEK</h2>
-                                <p class="mb-8 fs-24 text-heading"> GudTek aims to create the solana chain rug free and easy to trade with the help of artificial intelligence.</p>
-                                <div class="d-flex align-items-center flex-wrap gap-6">
-                                    <a href="https://t.me/Gud_tek_bot" class="btn btn-lg btn-light text-heading align-items-center rounded">
-                                        <iconify-icon icon="ic:twotone-thumb-up-off-alt"></iconify-icon>
-                                        <span class="d-inline-block ff-1">Try Now</span>
-                                    </a>
-                                    <ul class="list list-row align-items-center flex-wrap gap-4">
-                                        
-                                        <li>
-                                            <a href="https://x.com/Gud_tek_" class="btn btn-icon btn-lg btn-light rounded-circle">
-                                                <iconify-icon icon="prime:twitter"></iconify-icon>
-                                            </a>
-                                        </li>
-                                        
-                                    </ul>
-                                </div>
-                                <img src="bout-element-1.png" alt="image" class="img-fluid d-none d-xl-block position-absolute start-0 top-0 translate-middle-y pointer-none">
-                                <img src="about-element-2.png" alt="image" class="img-fluid d-none d-xl-block position-absolute end-0 top-0 translate-middle-y pointer-none">
-                                <img src="about-element-3.png" alt="image" class="img-fluid d-none d-xxl-block position-absolute start-100 top-100 translate-middle pointer-none">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- About Section End -->
-            <!-- How To Buy Section -->
-            <div class="section-space-top">
-                <div class="container-fluid container-fhd">
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="how-to-buy-section-1 section-space-y">
-                                <div class="section-space-md-bottom">
-                                    <div class="container">
-                                        <div class="row">
-                                            <div class="col-12">
-                                                <h2 class="mb-0 text-center text-light text-stroke-md text-shadow-md fs-6vw gsap-text-animation" data-split-type="words" data-scroll-trigger="true"> HOW TO <span class="text-secondary">BUY</span>
-                                                </h2>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="container">
-                                    <div class="row g-4 align-items-center">
-                                        <div class="col-xl-4">
-                                            <div class="row g-4">
-                                                <div class="col-md-6 col-xl-12">
-                                                    <div class="border border-dark shadow-sharp rounded-5 bg-light gsap-fade-in" data-scroll-trigger="true" data-y="25">
-                                                        <div class="border-bottom border-dark px-8 pt-8 pb-4">
-                                                            <ul class="list list-row gap-2">
-                                                                <li>
-                                                                    <span class="d-block w-4 h-4 rounded-circle border border-2x border-dark bg-danger"></span>
-                                                                </li>
-                                                                <li>
-                                                                    <span class="d-block w-4 h-4 rounded-circle border border-2x border-dark bg-warning"></span>
-                                                                </li>
-                                                                <li>
-                                                                    <span class="d-block w-4 h-4 rounded-circle border border-2x border-dark bg-success"></span>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                        <div class="p-8">
-                                                            <h5>GET SOME SOLANA</h5>
-                                                            <p class="mb-0 fs-18 text-heading">  </p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6 col-xl-12">
-                                                    <div class="border border-dark shadow-sharp rounded-5 bg-light gsap-fade-in" data-scroll-trigger="true" data-y="24">
-                                                        <div class="border-bottom border-dark px-8 pt-8 pb-4">
-                                                            <ul class="list list-row gap-2">
-                                                                <li>
-                                                                    <span class="d-block w-4 h-4 rounded-circle border border-2x border-dark bg-danger"></span>
-                                                                </li>
-                                                                <li>
-                                                                    <span class="d-block w-4 h-4 rounded-circle border border-2x border-dark bg-warning"></span>
-                                                                </li>
-                                                                <li>
-                                                                    <span class="d-block w-4 h-4 rounded-circle border border-2x border-dark bg-success"></span>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                        <div class="p-8">
-                                                            <h5>GO TO ANY EXHANGE</h5>
-                                                            <p class="mb-0 fs-18 text-heading"> </p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-xl-4 d-none d-xl-block">
-                                            <img src="image.png" alt="image" class="img-fluid gsap-fade-in" data-scroll-trigger="true" data-delay="1">
-                                        </div>
-                                        <div class="col-xl-4">
-                                            <div class="row g-4">
-                                                <div class="col-md-6 col-xl-12">
-                                                    <div class="border border-dark shadow-sharp rounded-5 bg-light gsap-fade-in" data-scroll-trigger="true" data-y="28">
-                                                        <div class="border-bottom border-dark px-8 pt-8 pb-4">
-                                                            <ul class="list list-row gap-2">
-                                                                <li>
-                                                                    <span class="d-block w-4 h-4 rounded-circle border border-2x border-dark bg-danger"></span>
-                                                                </li>
-                                                                <li>
-                                                                    <span class="d-block w-4 h-4 rounded-circle border border-2x border-dark bg-warning"></span>
-                                                                </li>
-                                                                <li>
-                                                                    <span class="d-block w-4 h-4 rounded-circle border border-2x border-dark bg-success"></span>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                        <div class="p-8">
-                                                            <h5>BUY GUDTEK</h5>
-                                                            <p class="mb-0 fs-18 text-heading"> </p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6 col-xl-12">
-                                                    <div class="border border-dark shadow-sharp rounded-5 bg-light gsap-fade-in" data-scroll-trigger="true" data-y="24">
-                                                        <div class="border-bottom border-dark px-8 pt-8 pb-4">
-                                                            <ul class="list list-row gap-2">
-                                                                <li>
-                                                                    <span class="d-block w-4 h-4 rounded-circle border border-2x border-dark bg-danger"></span>
-                                                                </li>
-                                                                <li>
-                                                                    <span class="d-block w-4 h-4 rounded-circle border border-2x border-dark bg-warning"></span>
-                                                                </li>
-                                                                <li>
-                                                                    <span class="d-block w-4 h-4 rounded-circle border border-2x border-dark bg-success"></span>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                        <div class="p-8">
-                                                            <h5>HOLD</h5>
-                                                            <p class="mb-0 fs-18 text-heading"> </p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <img src=" how-to-element-1.png" alt="image" class="img-fluid d-none d-xl-block position-absolute start-50 top-0 translate-middle pointer-none z-n1 gsap-fade-in" data-scroll-trigger="true">
-                                <img src=" hero-element-2.png" alt="image" class="img-fluid d-none d-xl-block position-absolute start-50 bottom-0 translate-middle-x pointer-none z-n1 gsap-fade-in" data-scroll-trigger="true">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- How To Buy Section End -->
-            <!-- Tokenomics  -->
-            <div class="section-space-y">
-                <div class="section-space-md-bottom">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-12">
-                                <h2 class="mb-0 text-center text-light text-stroke-md text-shadow-md fs-6vw gsap-text-animation" data-scroll-trigger="true" data-split-type="words"> TOKENOMICS </h2>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="container">
-                    <div class="row g-4 align-items-center">
-                        <div class="col-lg-6">
-                            <div class="border border-12x border-secondary p-6 p-xl-8 rounded-5 shadow-sharp-md text-center gsap-fade-in" data-scroll-trigger="true" data-y="10">
-                                
-                                <h3 class="text-light text-stroke text-shadow my-6">BUY GUDTEK</h3>
-                                <div class="d-flex justify-content-center justify-content-md-between align-items-center flex-wrap gap-4 mb-6">
-                                    <img src=" token-card-img-1.png" alt="image" class="img-fluid">
-                                    <div class="d-flex flex-column gap-3">
-                                        <span class="d-inline-block h6 m-0 py-3 px-6 bg-secondary-subtle rounded-pill border border-1x border-dark shadow-sharp"> SOON </span>
-                                        <h6 class="mb-0 text-secondary text-stroke text-shadow"> 1 MILLION MC</h6>
-                                    </div>
-                                </div>
-                                <p class="text-light fs-18 text-stroke text-shadow mb-6"> SUPPORT THE AI IN SOLANA CHAIN </p>
-                                <div class="border border-1x shadow-sharp rounded-5 bg-light p-6">
-                                    <span class="d-block text-heading fs-14 fw-bold ff-2 text-start"> WILL MAKE YOU BETTER TRADER</span>
-                                    <div class="custom-input-group d-flex align-items-center border-bottom border-2x border-dark py-1">
-                                       
-                                    </div>
-                                    <span class="d-block text-heading fs-14 fw-bold ff-2 text-start mt-8"> WILL FIGHT THE RUGS WITH YOU </span>
-                                    <div class="custom-input-group d-flex align-items-center border-bottom border-2x border-dark py-1">
-                                        
-                                        
-                                    </div>
-                                </div>
-                                <div class="my-6">
-                                    <div class="d-flex align-items-center justify-content-between">
-                                        <span class="d-block h6 m-0 text-light text-stroke text-shadow"> Products delivered </span>
-                                        <span class="d-block h6 m-0 text-light text-stroke text-shadow"> 3 </span>
-                                    </div>
-                                    <div class="progress mt-3">
-                                        <div class="progress-bar bg-danger" style="width: 100%"></div>
-                                    </div>
-                                </div>
-                                
-                            </div>
-                        </div>
-                        <div class="col-lg-6">
-                            <div class="row g-4">
-                                <div class="col-md-6">
-                                    <div class="p-8 bg-light border border-1x border-dark shadow-sharp text-center rounded h-100 gsap-fade-in" data-scroll-trigger="true" data-y="10">
-                                        <h2 class="text-danger text-stroke text-shadow">1B</h2>
-                                        <p class="mb-0 text-heading fs-18">TOKEN SUPPLY</p>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="p-8 bg-light border border-1x border-dark shadow-sharp text-center rounded h-100 gsap-fade-in" data-scroll-trigger="true" data-y="10" data-delay="0.25">
-                                        <h2 class="text-secondary text-stroke text-shadow">3%</h2>
-                                        <p class="mb-0 text-heading fs-18">DEV LOCKED</p>
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <div class="d-flex align-items-center p-3 rounded bg-light border border-1x border-dark shadow-sharp gsap-fade-in" data-scroll-trigger="true" data-y="10">
-                                        <input type="text" class="form-control border-0 text-dark" value="B7xavrAozTa1msQxu8YAcvPftf76x1fJYyLrYdTnbrah">
-                                        <button type="button" class="btn btn-icon btn-secondary">
-                                            <iconify-icon icon="iconamoon:copy-light"></iconify-icon>
-                                        </button>
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <img src="image.png" alt="image" class="img-fluid gsap-fade-in" data-scroll-trigger="true" data-y="10">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Tokenomics End -->
-            <!-- Cross Ticker  -->
-            <div class="section-space-sm-y position-relative w-100 text-center overflow-hidden">
-                <div class="ticker-2 py-4 bg-secondary border-top border-bottom border-2x border-dark">
-                    <div class="container-fluid p-0">
-                        <div class="row g-0">
-                            <div class="col-12">
-                                <div class="scroller-x" data-speed="slow" data-direction="right">
-                                    <ul class="list list-row align-items-center gap-4 scroller-x__list">
-                                        <li>
-                                         <span class="material-symbols-outlined">
-smart_toy
-</span>
-                                        </li>
-                                        <li>
-                                            <h4 class="mb-0 text-dark">FIND TRENDS</h4>
-                                        </li>
-                                        <li>
-                                         <span class="material-symbols-outlined">
-smart_toy
-</span>
-                                        </li>
-                                        <li>
-                                            <h4 class="mb-0 text-primary text-stroke text-shadow"> TRADE EASILY </h4>
-                                        </li>
-                                        <li>
-                                         <span class="material-symbols-outlined">
-smart_toy
-</span>
-                                        </li>
-                                        <li>
-                                            <h4 class="mb-0 text-dark">MAKE MONEY</h4>
-                                        </li>
-                                        <li>
-                                         <span class="material-symbols-outlined">
-smart_toy
-</span>
-                                        </li>
-                                        <li>
-                                            <h4 class="mb-0 text-primary text-stroke text-shadow"> INSIDER INFO </h4>
-                                        </li>
-                                        <li>
-                                            <span class="material-symbols-outlined" >
-                                                smart_toy
-                                                </span>
-                                        </li>
-                                        <li>
-                                            <h4 class="mb-0 text-dark">AI ON CHAIN</h4>
-                                        </li>
-                                        <li>
-                                            <span class="material-symbols-outlined">
-                                                smart_toy
-                                                </span>
-                                        </li>
-                                        <li>
-                                            <h4 class="mb-0 text-primary text-stroke text-shadow"> AI AGENT</h4>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="ticker-3 py-4 bg-dark border-top border-bottom border-2x border-dark">
-                    <div class="container-fluid p-0">
-                        <div class="row g-0">
-                            <div class="col-12">
-                                <div class="scroller-x" data-speed="slow" data-direction="left">
-                                    <ul class="list list-row align-items-center gap-4 scroller-x__list">
-                                        <li>
-                                           <span class="material-symbols-outlined">
-smart_toy
-</span>
-                                        </li>
-                                        <li>
-                                            <h4 class="mb-0 text-light">AI AGENT</h4>
-                                        </li>
-                                        <li>
-                                           <span class="material-symbols-outlined" style="color:white">
-smart_toy
-</span>
-                                        </li>
-                                        <li>
-                                            <h4 class="mb-0 text-primary text-stroke text-shadow"> TRADING</h4>
-                                        </li>
-                                        <li>
-                                           <span class="material-symbols-outlined" style="color:white">
-smart_toy
-</span>
-                                        </li>
-                                        <li>
-                                            <h4 class="mb-0 text-light">CHATTING</h4>
-                                        </li>
-                                        <li>
-                                           <span class="material-symbols-outlined" style="color:white">
-smart_toy
-</span>
-                                        </li>
-                                        <li>
-                                            <h4 class="mb-0 text-primary text-stroke text-shadow"> INSIDER </h4>
-                                        </li>
-                                        <li>
-                                           <span class="material-symbols-outlined" style="color:white">
-smart_toy
-</span>
-                                        </li>
-                                        <li>
-                                            <h4 class="mb-0 text-light text-stroke text-shadow"> AI BUDDY </h4>
-                                        </li>
-                                        <li>
-                                           <span class="material-symbols-outlined" style="color:white">
-smart_toy
-</span>
-                                        </li>
-                                        <li>
-                                            <h4 class="mb-0 text-primary text-stroke text-shadow"> TRADING </h4>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Cross Ticker End -->
-            <!-- Road Map -->
-            <div class="section-space-y position-relative">
-                <div class="section-space-md-bottom">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-12">
-                                <h2 class="mb-0 text-center text-light text-stroke-md text-shadow-md fs-6vw gsap-text-animation" data-split-type="words" data-scroll-trigger="true"> ROAD MAP </h2>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="road-map-section-1">
-                    <div class="container">
-                        <div class="row g-4">
-                            <div class="col-md-6 col-lg-5 col-xl-4 position-relative z-1">
-                                <div class="road-map-section-1__label road-map-section-1__label--odd d-flex align-items-center gap-4 mb-4 mb-lg-0">
-                                    <div class="w-8 h-8 rounded-circle border border-dark shadow-sharp bg-light flex-shrink-0"></div>
-                                    <h4 class="mb-0 text-light text-stroke text-shadow flex-grow-1"> Phase #01 </h4>
-                                </div>
-                                <div class="border border-dark shadow-sharp rounded-5 bg-light gsap-fade-in" data-scroll-trigger="true" data-y="10">
-                                    <div class="border-bottom border-dark px-8 pt-8 pb-4">
-                                        <ul class="list list-row gap-2">
-                                            <li>
-                                                <span class="d-block w-4 h-4 rounded-circle border border-2x border-dark bg-danger"></span>
-                                            </li>
-                                            <li>
-                                                <span class="d-block w-4 h-4 rounded-circle border border-2x border-dark bg-warning"></span>
-                                            </li>
-                                            <li>
-                                                <span class="d-block w-4 h-4 rounded-circle border border-2x border-dark bg-success"></span>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="p-8">
-                                        <h5>GUDTEK SCANNER</h5>
-                                        <ul class="list gap-4">
-                                            <li class="d-flex gap-3">
-                                                <span class="w-6 h-6 d-flex justify-content-center align-items-center rounded-circle border border-dark shadow-sharp-xs bg-light text-dark flex-shrink-0">
-                                                    <iconify-icon icon="ri:check-fill"></iconify-icon>
-                                                </span>
-                                                <span class="d-block fs-18 text-dark"> Platform Launch </span>
-                                            </li>
-                                            <li class="d-flex gap-3">
-                                                <span class="w-6 h-6 d-flex justify-content-center align-items-center rounded-circle border border-dark shadow-sharp-xs bg-light text-dark flex-shrink-0">
-                                                    <iconify-icon icon="ri:check-fill"></iconify-icon>
-                                                </span>
-                                                <span class="d-block fs-18 text-dark"> Community Building </span>
-                                            </li>
-                                            
-                                            <li class="d-flex gap-3">
-                                                <span class="w-6 h-6 d-flex justify-content-center align-items-center rounded-circle border border-dark shadow-sharp-xs bg-light text-dark flex-shrink-0">
-                                                    <iconify-icon icon="ri:check-fill"></iconify-icon>
-                                                </span>
-                                                <span class="d-block fs-18 text-dark"> Community Incentives Program </span>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="d-none d-lg-block w-100 m-0"></div>
-                            <div class="col-md-6 col-lg-5 col-xl-4 position-relative z-1 ms-lg-auto">
-                                <div class="road-map-section-1__label road-map-section-1__label--even d-flex align-items-center gap-4 mb-4 mb-lg-0">
-                                    <div class="w-8 h-8 rounded-circle border border-dark shadow-sharp bg-light d-lg-none"></div>
-                                    <h4 class="mb-0 text-light text-stroke text-shadow">Phase #02</h4>
-                                    <div class="w-8 h-8 rounded-circle border border-dark shadow-sharp bg-light d-none d-lg-block"></div>
-                                </div>
-                                <div class="border border-dark shadow-sharp rounded-5 bg-light gsap-fade-in" data-scroll-trigger="true" data-y="10">
-                                    <div class="border-bottom border-dark px-8 pt-8 pb-4">
-                                        <ul class="list list-row gap-2">
-                                            <li>
-                                                <span class="d-block w-4 h-4 rounded-circle border border-2x border-dark bg-danger"></span>
-                                            </li>
-                                            <li>
-                                                <span class="d-block w-4 h-4 rounded-circle border border-2x border-dark bg-warning"></span>
-                                            </li>
-                                            <li>
-                                                <span class="d-block w-4 h-4 rounded-circle border border-2x border-dark bg-success"></span>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="p-8">
-                                        <h5>GROWTH TO THE MOON</h5>
-                                        <ul class="list gap-4">
-                                            <li class="d-flex gap-3">
-                                                <span class="w-6 h-6 d-flex justify-content-center align-items-center rounded-circle border border-dark shadow-sharp-xs bg-light text-dark flex-shrink-0">
-                                                    <iconify-icon icon="ri:check-fill"></iconify-icon>
-                                                </span>
-                                                <span class="d-block fs-18 text-dark"> Launch of other products </span>
-                                            </li>
-                                            <li class="d-flex gap-3">
-                                                <span class="w-6 h-6 d-flex justify-content-center align-items-center rounded-circle border border-dark shadow-sharp-xs bg-light text-dark flex-shrink-0">
-                                                    <iconify-icon icon="ri:check-fill"></iconify-icon>
-                                                </span>
-                                                <span class="d-block fs-18 text-dark"> Holder based utility</span>
-                                            </li>
-                                            <li class="d-flex gap-3">
-                                                <span class="w-6 h-6 d-flex justify-content-center align-items-center rounded-circle border border-dark shadow-sharp-xs bg-light text-dark flex-shrink-0">
-                                                    <iconify-icon icon="ri:check-fill"></iconify-icon>
-                                                </span>
-                                                <span class="d-block fs-18 text-dark"> Marketing</span>
-                                            </li>
-                                            <li class="d-flex gap-3">
-                                                <span class="w-6 h-6 d-flex justify-content-center align-items-center rounded-circle border border-dark shadow-sharp-xs bg-light text-dark flex-shrink-0">
-                                                    <iconify-icon icon="ri:check-fill"></iconify-icon>
-                                                </span>
-                                                <span class="d-block fs-18 text-dark"> 100 Million mc</span>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="d-none d-lg-block w-100 m-0"></div>
-                            <div class="col-md-6 col-lg-5 col-xl-4 position-relative z-1">
-                                <div class="road-map-section-1__label road-map-section-1__label--odd d-flex align-items-center gap-4 mb-4 mb-lg-0">
-                                    <div class="w-8 h-8 rounded-circle border border-dark shadow-sharp bg-light"></div>
-                                    <h4 class="mb-0 text-light text-stroke text-shadow">Phase #03</h4>
-                                </div>
-                                <div class="border border-dark shadow-sharp rounded-5 bg-light gsap-fade-in" data-scroll-trigger="true" data-y="10">
-                                    <div class="border-bottom border-dark px-8 pt-8 pb-4">
-                                        <ul class="list list-row gap-2">
-                                            <li>
-                                                <span class="d-block w-4 h-4 rounded-circle border border-2x border-dark bg-danger"></span>
-                                            </li>
-                                            <li>
-                                                <span class="d-block w-4 h-4 rounded-circle border border-2x border-dark bg-warning"></span>
-                                            </li>
-                                            <li>
-                                                <span class="d-block w-4 h-4 rounded-circle border border-2x border-dark bg-success"></span>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="p-8">
-                                        <h5>PARTNERSHIPS</h5>
-                                        <ul class="list gap-4">
-                                            <li class="d-flex gap-3">
-                                                <span class="w-6 h-6 d-flex justify-content-center align-items-center rounded-circle border border-dark shadow-sharp-xs bg-light text-dark flex-shrink-0">
-                                                    <iconify-icon icon="ri:check-fill"></iconify-icon>
-                                                </span>
-                                                <span class="d-block fs-18 text-dark"> Partner with solana</span>
-                                            </li>
-                                            <li class="d-flex gap-3">
-                                                <span class="w-6 h-6 d-flex justify-content-center align-items-center rounded-circle border border-dark shadow-sharp-xs bg-light text-dark flex-shrink-0">
-                                                    <iconify-icon icon="ri:check-fill"></iconify-icon>
-                                                </span>
-                                                <span class="d-block fs-18 text-dark"> Partner with pumpfun </span>
-                                            </li>
-                                            <li class="d-flex gap-3">
-                                                <span class="w-6 h-6 d-flex justify-content-center align-items-center rounded-circle border border-dark shadow-sharp-xs bg-light text-dark flex-shrink-0">
-                                                    <iconify-icon icon="ri:check-fill"></iconify-icon>
-                                                </span>
-                                                <span class="d-block fs-18 text-dark"> Partner with Jupiter </span>
-                                            </li>
-                                            <li class="d-flex gap-3">
-                                                <span class="w-6 h-6 d-flex justify-content-center align-items-center rounded-circle border border-dark shadow-sharp-xs bg-light text-dark flex-shrink-0">
-                                                    <iconify-icon icon="ri:check-fill"></iconify-icon>
-                                                </span>
-                                                <span class="d-block fs-18 text-dark"> Partner with other firms</span>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="d-none d-lg-block w-100 m-0"></div>
-                            <div class="col-md-6 col-lg-5 col-xl-4 position-relative z-1 ms-lg-auto">
-                                <div class="road-map-section-1__label road-map-section-1__label--even d-flex align-items-center gap-4 mb-4 mb-lg-0">
-                                    <div class="w-8 h-8 rounded-circle border border-dark shadow-sharp bg-light d-lg-none"></div>
-                                    <h4 class="mb-0 text-light text-stroke text-shadow">Phase #04</h4>
-                                    <div class="w-8 h-8 rounded-circle border border-dark shadow-sharp bg-light d-lg-block d-none"></div>
-                                </div>
-                                <div class="border border-dark shadow-sharp rounded-5 bg-light gsap-fade-in" data-scroll-trigger="true" data-y="10">
-                                    <div class="border-bottom border-dark px-8 pt-8 pb-4">
-                                        <ul class="list list-row gap-2">
-                                            <li>
-                                                <span class="d-block w-4 h-4 rounded-circle border border-2x border-dark bg-danger"></span>
-                                            </li>
-                                            <li>
-                                                <span class="d-block w-4 h-4 rounded-circle border border-2x border-dark bg-warning"></span>
-                                            </li>
-                                            <li>
-                                                <span class="d-block w-4 h-4 rounded-circle border border-2x border-dark bg-success"></span>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="p-8">
-                                        <h5>FULL AI ON CHAIN</h5>
-                                        <ul class="list gap-4">
-                                            <li class="d-flex gap-3">
-                                                <span class="w-6 h-6 d-flex justify-content-center align-items-center rounded-circle border border-dark shadow-sharp-xs bg-light text-dark flex-shrink-0">
-                                                    <iconify-icon icon="ri:check-fill"></iconify-icon>
-                                                </span>
-                                                <span class="d-block fs-18 text-dark"> Create full chain on AI </span>
-                                            </li>
-                                            <li class="d-flex gap-3">
-                                                <span class="w-6 h-6 d-flex justify-content-center align-items-center rounded-circle border border-dark shadow-sharp-xs bg-light text-dark flex-shrink-0">
-                                                    <iconify-icon icon="ri:check-fill"></iconify-icon>
-                                                </span>
-                                                <span class="d-block fs-18 text-dark"> Create agents that work on scanning </span>
-                                            </li>
-                                            <li class="d-flex gap-3">
-                                                <span class="w-6 h-6 d-flex justify-content-center align-items-center rounded-circle border border-dark shadow-sharp-xs bg-light text-dark flex-shrink-0">
-                                                    <iconify-icon icon="ri:check-fill"></iconify-icon>
-                                                </span>
-                                                <span class="d-block fs-18 text-dark"> Create trading agents</span>
-                                            </li>
-                                            
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <img src=" road-map-element-1.png" alt="image" class="img-fluid road-map-section-1__element road-map-section-1__element--1">
-                    <img src=" road-map-element-2.png" alt="image" class="img-fluid road-map-section-1__element road-map-section-1__element--2">
-                    <img src=" road-map-element-3.png" alt="image" class="img-fluid road-map-section-1__element road-map-section-1__element--3">
-                    <img src=" road-map-element-4.png" alt="image" class="img-fluid road-map-section-1__element road-map-section-1__element--4">
-                    <img src=" road-map-element-5.png" alt="image" class="img-fluid road-map-section-1__element road-map-section-1__element--5">
-                    <img src=" road-map-element-6.png" alt="image" class="img-fluid road-map-section-1__element road-map-section-1__element--6">
-                    <img src=" road-map-element-7.png" alt="image" class="img-fluid road-map-section-1__element road-map-section-1__element--7">
-                </div>
-                <img src=" cloud-sky.png" alt="image" class="img-fluid w-100 blend-y-start-15 position-absolute start-50 top-0 translate-middle z-n2 pointer-none gsap-fade-in" data-scroll-trigger="true">
-            </div>
-            <!-- Road Map End -->
-            <!-- FAQ -->
-            <div class="faq-section-1 section-space-y bg-secondary">
-                <div class="section-space-md-bottom">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-12">
-                                <h2 class="mb-0 text-center text-light text-stroke-md text-shadow-md fs-6vw gsap-text-animation" data-split-type="words" data-scroll-trigger="true"> FAQ </h2>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="container">
-                    <div class="row g-4">
-                        <div class="col-lg-6">
-                            <div class="accordion accordion-connected accordion-separate" id="faqOne">
-                                <div class="accordion-item shadow-sharp-md">
-                                    <h2 class="accordion-header">
-                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqOneA" aria-expanded="true" aria-controls="faqOneA">
-                                            <span class="accordion-button__title"> What is Gudtek and how does it work? </span>
-                                        </button>
-                                    </h2>
-                                    <div id="faqOneA" class="accordion-collapse collapse" data-bs-parent="#faqOne">
-                                        <div class="accordion-body">Gudtek is ai revolution on chain which helps users to trade safely without without gettig into rugs</div>
-                                    </div>
-                                </div>
-                                <div class="accordion-item shadow-sharp-md">
-                                    <h2 class="accordion-header">
-                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqOneB" aria-expanded="false" aria-controls="faqOneB">
-                                            <span class="accordion-button__title"> Why trust GudTek </span>
-                                        </button>
-                                    </h2>
-                                    <div id="faqOneB" class="accordion-collapse collapse" data-bs-parent="#faqOne">
-                                        <div class="accordion-body"> Cause we belive in creating in space where no one loose money and everyone makes tonn of money </div>
-                                    </div>
-                                </div>
-                                
-                            </div>
-                        </div>
-                        <div class="col-lg-6">
-                            <div class="accordion accordion-connected accordion-separate" id="faqTwo">
-                                <div class="accordion-item shadow-sharp-md">
-                                    <h2 class="accordion-header">
-                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqTwoA" aria-expanded="true" aria-controls="faqTwoA">
-                                            <span class="accordion-button__title"> Who are in team of GudTek</span>
-                                        </button>
-                                    </h2>
-                                    <div id="faqTwoA" class="accordion-collapse collapse" data-bs-parent="#faqTwo">
-                                        <div class="accordion-body"> There are 3 devs and 10 Marketing people in gudtek </div>
-                                    </div>
-                                </div>
-                                <div class="accordion-item shadow-sharp-md">
-                                    <h2 class="accordion-header">
-                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqTwoB" aria-expanded="false" aria-controls="faqTwoB">
-                                            <span class="accordion-button__title"> How do I Support Gudtek</span>
-                                        </button>
-                                    </h2>
-                                    <div id="faqTwoB" class="accordion-collapse collapse" data-bs-parent="#faqTwo">
-                                        <div class="accordion-body"> Just buy the gudtek and help us grow with creating new community </div>
-                                    </div>
-                                </div>
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <img src=" faq-element-1.png" alt="image" class="img-fluid faq-section-1__element faq-section-1__element--1 gsap-fade-in" data-scroll-trigger="true" data-y="15">
-                <img src=" faq-element-2.png" alt="image" class="img-fluid faq-section-1__element faq-section-1__element--2 gsap-fade-in" data-scroll-trigger="true" data-y="15">
-            </div>
-            <!-- FAQ End -->
-            <!-- Footer -->
-            <div class="section-space-top section-space-sm-bottom position-relative z-1">
-                <div class="section-space-md-bottom">
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-10">
-                                <div class="cta-1 section-space-y text-center gsap-zoom" data-scroll-trigger="true" data-scale="0.8" data-scrub="true">
-                                    <h2 class="text-secondary text-stroke text-shadow fs-6vw"> JOIN US </h2>
-                                    <div class="d-flex align-items-center p-3 rounded bg-light border border-1x border-dark shadow-sharp max-text-14 mx-auto">
-                                        
-                                      
-                                    </div>
-                                    <ul class="list list-row gap-4 justify-content-center mt-8 flex-wrap">
-                                        
-                                        <li>
-                                            <a href="https://x.com/Gud_tek_" class="btn btn-icon btn-light hover:bg-secondary rounded-circle">
-                                                <iconify-icon icon="ri:twitter-x-fill"></iconify-icon>
-                                            </a>
-                                       
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="border border-dark shadow-sharp rounded-4 p-8 bg-light position-relative z-1">
-                                <div class="row g-4 justify-content-center align-items-center">
-                                    <div class="col-lg-5">
-                                        <p class="mb-0 ff-2 text-dark text-center text-lg-start"> &copy; GUDTEK 2025. All rights reserved. </p>
-                                    </div>
-                                    <div class="col-lg-7">
-                                        
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <img src=" footer-cloud-1.png" alt="image" class="img-fluid w-100 position-absolute start-0 end-0 bottom-0 pointer-none">
-            </div>
-            <!-- Footer End -->
+
+        <div class="s-hero__scroll">
+            <a href="#about" class="s-hero__scroll-link smoothscroll">
+                Scroll Down
+            </a>
         </div>
-    </div>
-    <!-- Scripts -->
-    <script src="bootstrap.bundle.js"></script>
-    <script src="iconify.js"></script>
-    <script src="simplebar.js"></script>
-    <script src="gsap.min.js"></script>
-    <script src="ScrollSmoother.min.js"></script>
-    <script src="ScrollTrigger.min.js"></script>
-    <script src="SplitText.min.js"></script>
-    <script src="Flip.min.js"></script>
-    <script src="app.js"></script>
+
+    </section> <!-- end s-hero -->
+
+
+    <!-- about
+    ================================================== -->
+    <section id="about" class="s-about">
+
+        <div class="horizontal-line"></div>
+
+        <div class="row">
+            <div class="column large-12">
+
+                <div class="section-title" data-num="01" data-aos="fade-up">
+                    <h3 class="h6">Who We Are</h3>
+                </div>
+
+            </div>
+
+            <div class="column large-6 w-900-stack s-about__intro-text">
+                <h1 class="display-1" data-aos="fade-up">
+                    Gudtek is a powerhouse of memecoin intellegence
+                </h1>
+
+                <p class="lead" data-aos="fade-up">
+                    We provide series of AI tools to our holders who are trenching and want to take a less risky approach.
+                </p>
+            </div>
+
+            <div class="column large-6 w-900-stack s-about__photo-block">
+                <div class="s-about__photo" data-aos="fade-up">
+                    <img  src="logo.png" alt="" srcset="">
+                </div>
+            </div>
+        </div>
+
+        <div class="row block-large-1-2 block-tab-full s-about__process item-list">
+            <div class="column item item-process" data-aos="fade-up">
+                <h3 class="item-title">Devs</h3>
+                <p>
+                Gud Tek is the team of 2 devs who work 24/7 to build the agents to create solana rug free
+                </p>
+            </div>
+            <div class="column item item-process" data-aos="fade-up">
+                <h3 class="item-title">Investors</h3>
+                <p>
+                Gudtek has been building community from past 2 months and our community is our biggest investor.
+                </p>
+            </div>
+            
+        </div>
+
+    </section> <!-- end s-about -->
+
+
+    <!-- services
+    ================================================== -->
+    <section id="services" class="s-services">
+
+        <div class="row">
+            <div class="column large-12">
+                <div class="section-title" data-num="02" data-aos="fade-up">
+                    <h3 class="h6">Tokennomics</h3>
+                </div>
+            </div>
+            <div class="column large-6 w-900-stack">
+                <h1 class="display-1" data-aos="fade-up">
+                    Launch on pumpfun 
+                    
+                </h1>
+            </div>
+            <div class="column large-6 w-900-stack">
+                <p class="lead" data-aos="fade-up">
+                    We will launch on PumpFun and lock dev supply because all we require is community support to further develop and beta test our products.
+                </p>
+            </div>
+        </div>
+
+        <div class="row block-large-1-2 block-tab-full s-services__services item-list">
+            <div class="column item item-service" data-aos="fade-up">
+                <span class="service-icon service-icon--product-design"></span>
+                <h3 class="item-title">Token suppy</h3>
+                <p>
+                    As standard pumpfun we will launch with the supply of 1 billion
+
+
+                </p>
+            </div>
+            <div class="column item item-service" data-aos="fade-up">
+                <span class="service-icon service-icon--branding"></span>
+                <h3 class="item-title">Team holding</h3>
+                <p>
+                No bundles , no insiders , 3% dev supply locked
+                </p>
+            </div>
+            
+        </div>
+
+    </section> <!-- end s-services -->
+
+    <section id="portfolio" class="s-portfolio">
+        <div class="row s-portfolio__top">
+            <div class="column large-6 w-900-stack">
+                <div class="section-title" data-num="03" data-aos="fade-up">
+                    <h3 class="h6">Roadmap</h3>
+                </div>
+            </div>
+            <div class="column large-6 w-900-stack">
+                <h1 class="display-1" data-aos="fade-up">
+                    The roadmap to change the Solana community
+                </h1>
+                <p>Coming Soon ...</p>
+                
+            </div>
+        </div> <!-- end s-portfolio__top -->
+    
+       <!-- end s-portfolio__list --> <!-- end s-portfolio__list -->
+    </section> 
+    <!-- clients
+    ================================================== -->
+    <div id="clients" class="section s-clients">
+
+        <div class="row narrower s-clients__top h-text-center">
+            <div class="column">
+                <h1 class="display-1" data-aos="fade-up">
+                We are super happy to work for our own solana community
+                
+                </h1>
+            </div>
+        </div> <!-- s-clients__top -->
+
+        <div class="row clients-outer">
+            <div class="column">
+                <div class="clients" data-aos="fade-up">
+                    
+                    
+                     
+                </div> <!-- end clients -->
+            </div> <!-- end column -->
+        </div> <!-- end clients-outer -->
+
+        <div class="row testimonials collapse">
+
+            <div class="column large-12">
+
+                <div class="testimonial-slider" data-aos="fade-up">
+
+                    <div class="testimonial-slider__slide">
+                        <p>
+                        Gudtek will make trenches great again
+                        </p>
+                        <div class="testimonial-slider__author">
+                            <img src="logo.png" alt="Author image" class="testimonial-slider__avatar">
+                            <cite class="testimonial-slider__cite">
+                                <strong>Dev</strong>
+                                <span>Gud tek</span>
+                            </cite>
+                        </div>
+                    </div> <!-- end testimonials__slide -->
+    
+                    
+
+                </div> <!-- end testimonial slider -->
+                
+            </div> <!-- end column -->
+
+        </div> <!-- end row -->
+
+
+    </div> <!-- end s-clients -->
+
+
+    <!-- contact
+    ================================================== -->
+    <section class="s-contact">
+
+        <div class="row narrower s-contact__top h-text-center">
+            <div class="column">
+                <h3 class="h6">Get In Touch</h3>
+                <h1 class="display-1">
+                    Lets work together and make trenching fun and profitable
+                </h1>
+            </div>
+        </div> <!-- s-footer__top -->
+
+        <div class="row h-text-center">
+            <div class="column">
+                <p class="s-contact__email">
+                    <a href="mailto:#0">Gud Tek</a>
+                </p>
+            </div>
+        </div>
+
+    </section>  <!-- end s-contact -->
+
+
+    <!-- footer
+    ================================================== -->
+
+    <!-- photoswipe background
+    ================================================== -->
+    <div aria-hidden="true" class="pswp" role="dialog" tabindex="-1">
+
+        <div class="pswp__bg"></div>
+        <div class="pswp__scroll-wrap">
+
+            <div class="pswp__container">
+                <div class="pswp__item"></div>
+                <div class="pswp__item"></div>
+                <div class="pswp__item"></div>
+            </div>
+
+            <div class="pswp__ui pswp__ui--hidden">
+                <div class="pswp__top-bar">
+                    <div class="pswp__counter"></div><button class="pswp__button pswp__button--close" title="Close (Esc)"></button> <button class="pswp__button pswp__button--share" title=
+                    "Share"></button> <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button> <button class="pswp__button pswp__button--zoom" title=
+                    "Zoom in/out"></button>
+                    <div class="pswp__preloader">
+                        <div class="pswp__preloader__icn">
+                            <div class="pswp__preloader__cut">
+                                <div class="pswp__preloader__donut"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                    <div class="pswp__share-tooltip"></div>
+                </div><button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button> <button class="pswp__button pswp__button--arrow--right" title=
+                "Next (arrow right)"></button>
+                <div class="pswp__caption">
+                    <div class="pswp__caption__center"></div>
+                </div>
+            </div>
+
+        </div>
+
+    </div> <!-- end photoSwipe background -->
+
+
+    <!-- Java Script
+    ================================================== -->
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
+
 </body>
 
 </html>

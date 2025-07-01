@@ -4057,11 +4057,12 @@ html.no-csstransitions .s-hero__content {
 }
 
 .s-about__photo {
-    background-image: url();
+    background-image: url(/about.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     position: absolute;
+    border-radius: 2%;
     top: var(--vspace-0_5);
     right: var(--gutter-lg);
     left: var(--gutter-lg);
